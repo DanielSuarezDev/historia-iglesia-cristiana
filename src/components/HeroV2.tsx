@@ -2,12 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useTheme } from '@/context/ThemeContext';
+import { useIsMobile } from '@/lib/useMediaQuery';
 
 export default function HeroV2() {
   const { t, themeKey } = useTheme();
   const [started, setStarted] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const timer = setTimeout(() => setStarted(true), 200);
@@ -30,7 +32,8 @@ export default function HeroV2() {
     resize();
     window.addEventListener('resize', resize);
 
-    const particles = Array.from({ length: 110 }, () => ({
+    const particleCount = window.innerWidth < 768 ? 55 : 110;
+    const particles = Array.from({ length: particleCount }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
       size: Math.random() * 1.6 + 0.2,
@@ -93,45 +96,49 @@ export default function HeroV2() {
     transition: `opacity 1s ease ${d}s, transform 1s ease ${d}s`,
   });
 
+  const ring1 = isMobile ? 320 : 560;
+  const ring2 = isMobile ? 260 : 460;
+  const glow = isMobile ? 420 : 700;
+
   return (
-    <section style={{ position: 'relative', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: heroGrad, overflow: 'hidden' }}>
+    <section style={{ position: 'relative', minHeight: '100vh', height: '100dvh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: heroGrad, overflow: 'hidden' }}>
       <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }} />
 
       {/* Glow circle */}
-      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 700, height: 700, borderRadius: '50%', background: `radial-gradient(circle, ${t.accent}08 0%, transparent 65%)`, animation: 'heroGlow 4s ease-in-out infinite', pointerEvents: 'none', zIndex: 1 }} />
+      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: glow, height: glow, borderRadius: '50%', background: `radial-gradient(circle, ${t.accent}08 0%, transparent 65%)`, animation: 'heroGlow 4s ease-in-out infinite', pointerEvents: 'none', zIndex: 1 }} />
 
       {/* Rotating ring 1 */}
-      <div style={{ position: 'absolute', top: '50%', left: '50%', width: 560, height: 560, marginTop: -280, marginLeft: -280, borderRadius: '50%', border: `1px solid ${t.accent}18`, animation: 'spinSlow 40s linear infinite', zIndex: 1 }}>
+      <div style={{ position: 'absolute', top: '50%', left: '50%', width: ring1, height: ring1, marginTop: -ring1 / 2, marginLeft: -ring1 / 2, borderRadius: '50%', border: `1px solid ${t.accent}18`, animation: 'spinSlow 40s linear infinite', zIndex: 1 }}>
         {[0, 60, 120, 180, 240, 300].map(deg => (
-          <div key={deg} style={{ position: 'absolute', top: '50%', left: '50%', width: 4, height: 4, borderRadius: '50%', background: t.accent, opacity: 0.35, transform: `rotate(${deg}deg) translateX(279px) translateY(-2px)` }} />
+          <div key={deg} style={{ position: 'absolute', top: '50%', left: '50%', width: 4, height: 4, borderRadius: '50%', background: t.accent, opacity: 0.35, transform: `rotate(${deg}deg) translateX(${ring1 / 2 - 1}px) translateY(-2px)` }} />
         ))}
       </div>
 
       {/* Rotating ring 2 */}
-      <div style={{ position: 'absolute', top: '50%', left: '50%', width: 460, height: 460, marginTop: -230, marginLeft: -230, borderRadius: '50%', border: `0.5px solid ${t.accent}10`, animation: 'spinSlowR 60s linear infinite', zIndex: 1, pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', top: '50%', left: '50%', width: ring2, height: ring2, marginTop: -ring2 / 2, marginLeft: -ring2 / 2, borderRadius: '50%', border: `0.5px solid ${t.accent}10`, animation: 'spinSlowR 60s linear infinite', zIndex: 1, pointerEvents: 'none' }} />
 
       {/* Content */}
-      <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', maxWidth: 860, padding: '0 40px', transform: `translateY(${scrollY * 0.25}px)` }}>
+      <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', maxWidth: 860, padding: isMobile ? '0 22px' : '0 40px', transform: `translateY(${scrollY * 0.25}px)`, width: '100%' }}>
 
         {/* Eyebrow */}
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 14, marginBottom: 36, ...lineDelay(0.2) }}>
-          <div style={{ height: 1, width: 64, background: `linear-gradient(to right, transparent, ${t.accent})` }} />
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: isMobile ? 10 : 14, marginBottom: isMobile ? 26 : 36, ...lineDelay(0.2) }}>
+          <div style={{ height: 1, width: isMobile ? 40 : 64, background: `linear-gradient(to right, transparent, ${t.accent})` }} />
           <svg width="20" height="20" viewBox="0 0 28 28">
             <rect x="12" y="2" width="4" height="24" fill={t.accent} rx="1" />
             <rect x="6" y="8" width="16" height="4" fill={t.accent} rx="1" />
           </svg>
-          <div style={{ height: 1, width: 64, background: `linear-gradient(to left, transparent, ${t.accent})` }} />
+          <div style={{ height: 1, width: isMobile ? 40 : 64, background: `linear-gradient(to left, transparent, ${t.accent})` }} />
         </div>
 
         {/* Quote */}
-        <h1 style={{ fontFamily: 'var(--font-playfair), serif', fontStyle: 'italic', fontWeight: 700, fontSize: 'clamp(34px, 5vw, 68px)', lineHeight: 1.18, margin: '0 0 32px', textShadow: `0 0 80px ${t.accent}30` }}>
+        <h1 style={{ fontFamily: 'var(--font-playfair), serif', fontStyle: 'italic', fontWeight: 700, fontSize: 'clamp(28px, 7.5vw, 68px)', lineHeight: 1.18, margin: isMobile ? '0 0 24px' : '0 0 32px', textShadow: `0 0 80px ${t.accent}30` }}>
           <span style={{ display: 'block', color: textOnDark, ...lineDelay(0.35) }}>"El que no conoce</span>
           <span style={{ display: 'block', color: textOnDark, ...lineDelay(0.55) }}>su historia está</span>
           <span style={{ display: 'block', color: t.accent, ...lineDelay(0.75), textShadow: `0 0 40px ${t.accent}60` }}>condenado a repetirla."</span>
         </h1>
 
         {/* Attribution */}
-        <p style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 16, letterSpacing: '0.14em', color: mutedOnDark, textTransform: 'uppercase', margin: '0 0 52px', ...lineDelay(0.95) }}>
+        <p style={{ fontFamily: 'var(--font-crimson), serif', fontSize: isMobile ? 13 : 16, letterSpacing: '0.14em', color: mutedOnDark, textTransform: 'uppercase', margin: isMobile ? '0 0 36px' : '0 0 52px', ...lineDelay(0.95) }}>
           — George Santayana
         </p>
 
@@ -154,7 +161,7 @@ export default function HeroV2() {
       </div>
 
       {/* Scroll indicator */}
-      <div style={{ position: 'absolute', bottom: 36, left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, zIndex: 2, ...lineDelay(1.6) }}>
+      <div style={{ position: 'absolute', bottom: isMobile ? 20 : 36, left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, zIndex: 2, ...lineDelay(1.6) }}>
         <span style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 10, letterSpacing: '0.28em', color: mutedOnDark, textTransform: 'uppercase' }}>Explorar</span>
         <div style={{ width: 1, height: 36, background: `linear-gradient(to bottom, ${t.accent}80, transparent)` }} />
       </div>
