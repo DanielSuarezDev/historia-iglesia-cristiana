@@ -155,7 +155,7 @@ export default function HeroV2() {
             Historia de la Iglesia
           </p>
           <p style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 'clamp(14px, 1.6vw, 18px)', color: mutedOnDark, letterSpacing: '0.1em', margin: 0, fontStyle: 'italic' }}>
-            Compendio por Daniel Suárez
+            Compendio
           </p>
         </div>
       </div>
