@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useTheme } from '@/context/ThemeContext';
+import { useIsMobile } from '@/lib/useMediaQuery';
 
 const WORLD_RELIGIONS = [
   {
@@ -63,6 +64,7 @@ const WORLD_RELIGIONS = [
 
 export default function StatsC() {
   const { t } = useTheme();
+  const isMobile = useIsMobile();
   const [active, setActive] = useState('islam');
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
@@ -107,46 +109,81 @@ export default function StatsC() {
   const maxAll = 1900;
 
   return (
-    <section id="secC" ref={sectionRef} style={{ background: t.bg, padding: '100px 0 120px' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 48px' }}>
+    <section id="secC" ref={sectionRef} style={{ background: t.bg, padding: isMobile ? '64px 0 80px' : '100px 0 120px' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '0 18px' : '0 48px' }}>
 
-        <div style={{ marginBottom: 48, opacity: visible ? 1 : 0, transition: 'opacity 0.7s ease' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 16 }}>
-            <div style={{ width: 4, height: 48, background: t.accent }} />
-            <div>
-              <p style={{ fontFamily: 'var(--font-crimson), serif', color: t.accent, letterSpacing: '0.25em', fontSize: 12, textTransform: 'uppercase', margin: '0 0 6px' }}>Sección C</p>
-              <h2 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: 40, color: t.text, margin: 0, fontWeight: 700 }}>Otras Religiones del Mundo</h2>
+        <div style={{ marginBottom: isMobile ? 32 : 48, opacity: visible ? 1 : 0, transition: 'opacity 0.7s ease' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 12 : 16, marginBottom: 16 }}>
+            <div style={{ width: 4, height: isMobile ? 36 : 48, background: t.accent, flexShrink: 0 }} />
+            <div style={{ minWidth: 0 }}>
+              <p style={{ fontFamily: 'var(--font-crimson), serif', color: t.accent, letterSpacing: '0.25em', fontSize: isMobile ? 11 : 12, textTransform: 'uppercase', margin: '0 0 6px' }}>Sección C</p>
+              <h2 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: isMobile ? 26 : 40, color: t.text, margin: 0, fontWeight: 700, lineHeight: 1.15 }}>Otras Religiones del Mundo</h2>
             </div>
           </div>
-          <p style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 17, color: t.textMuted, maxWidth: 700, lineHeight: 1.7, marginLeft: 20 }}>
+          <p style={{ fontFamily: 'var(--font-crimson), serif', fontSize: isMobile ? 15 : 17, color: t.textMuted, maxWidth: 700, lineHeight: 1.7, marginLeft: isMobile ? 0 : 20 }}>
             Más allá del Cristianismo, miles de millones de personas profesan el Islam, el Hinduismo, el Budismo, las religiones animistas e indígenas, y el Judaísmo. Datos estimados al año 2024.
           </p>
         </div>
 
         {/* Overview */}
-        <div style={{ background: t.bgCard, border: `1px solid ${t.border}`, padding: '24px 28px', marginBottom: 28, opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.2s' }}>
-          <h3 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: 18, color: t.text, margin: '0 0 18px', fontWeight: 600 }}>Escala comparativa de fieles (millones)</h3>
+        <div style={{ background: t.bgCard, border: `1px solid ${t.border}`, padding: isMobile ? '20px 18px' : '24px 28px', marginBottom: isMobile ? 22 : 28, opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.2s' }}>
+          <h3 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: isMobile ? 16 : 18, color: t.text, margin: '0 0 18px', fontWeight: 600 }}>Escala comparativa de fieles (millones)</h3>
           {WORLD_RELIGIONS.map((r, i) => (
-            <div key={r.key} style={{ display: 'grid', gridTemplateColumns: '30px 220px 1fr 80px', gap: 12, alignItems: 'center', marginBottom: 10 }}>
-              <span style={{ fontSize: 18, textAlign: 'center' }}>{r.icon}</span>
-              <span style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 14, color: active === r.key ? t.text : t.textMuted, cursor: 'pointer', transition: 'color 0.2s' }} onClick={() => setActive(r.key)}>{r.name}</span>
-              <div style={{ position: 'relative', height: 20, background: `${t.border}40`, cursor: 'pointer' }} onClick={() => setActive(r.key)}>
+            <div key={r.key} style={{
+              display: 'grid',
+              gridTemplateColumns: isMobile ? '24px 1fr 70px' : '30px 220px 1fr 80px',
+              gridTemplateRows: isMobile ? 'auto auto' : 'auto',
+              columnGap: isMobile ? 10 : 12,
+              rowGap: isMobile ? 4 : 0,
+              alignItems: 'center',
+              marginBottom: isMobile ? 14 : 10,
+            }}>
+              <span style={{ fontSize: isMobile ? 16 : 18, textAlign: 'center' }}>{r.icon}</span>
+              <span
+                style={{
+                  fontFamily: 'var(--font-crimson), serif',
+                  fontSize: isMobile ? 13 : 14,
+                  color: active === r.key ? t.text : t.textMuted,
+                  cursor: 'pointer', transition: 'color 0.2s',
+                  overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                }}
+                onClick={() => setActive(r.key)}
+              >{r.name}</span>
+              <span style={{
+                fontFamily: 'var(--font-playfair), serif', fontSize: isMobile ? 13 : 14,
+                color: r.color, fontWeight: 700, textAlign: 'right',
+              }}>{r.total}</span>
+              <div
+                style={{
+                  position: 'relative', height: isMobile ? 14 : 20, background: `${t.border}40`, cursor: 'pointer',
+                  gridColumn: isMobile ? '1 / -1' : 'auto',
+                }}
+                onClick={() => setActive(r.key)}
+              >
                 <div style={{ position: 'absolute', left: 0, top: 0, height: '100%', background: r.color, opacity: active === r.key ? 1 : 0.5, width: visible ? `${(r.totalNum / maxAll) * 100}%` : '0%', transition: `width 0.9s ease ${0.3 + i * 0.08}s, opacity 0.2s` }} />
               </div>
-              <span style={{ fontFamily: 'var(--font-playfair), serif', fontSize: 14, color: r.color, fontWeight: 700, textAlign: 'right' }}>{r.total}</span>
             </div>
           ))}
         </div>
 
         {/* Religion tabs */}
-        <div style={{ display: 'flex', gap: 6, marginBottom: 24, flexWrap: 'wrap' }}>
+        <div style={{
+          display: 'flex', gap: 6, marginBottom: isMobile ? 18 : 24,
+          flexWrap: isMobile ? 'nowrap' : 'wrap',
+          overflowX: isMobile ? 'auto' : 'visible',
+          WebkitOverflowScrolling: 'touch',
+          margin: isMobile ? '0 -18px 18px' : '0 0 24px',
+          padding: isMobile ? '0 18px 4px' : 0,
+        }}>
           {WORLD_RELIGIONS.map(r => (
             <button key={r.key} onClick={() => setActive(r.key)} style={{
-              padding: '10px 20px', borderRadius: 2, cursor: 'pointer', border: `1px solid ${active === r.key ? r.color : t.border}`,
+              padding: isMobile ? '8px 14px' : '10px 20px', borderRadius: 2, cursor: 'pointer',
+              border: `1px solid ${active === r.key ? r.color : t.border}`,
               background: active === r.key ? `${r.color}18` : 'transparent',
               color: active === r.key ? t.text : t.textMuted,
-              fontFamily: 'var(--font-crimson), serif', fontSize: 15, transition: 'all 0.2s',
-              display: 'flex', alignItems: 'center', gap: 8,
+              fontFamily: 'var(--font-crimson), serif', fontSize: isMobile ? 13 : 15, transition: 'all 0.2s',
+              display: 'flex', alignItems: 'center', gap: 6,
+              whiteSpace: 'nowrap', flexShrink: 0,
             }}>
               <span>{r.icon}</span> {r.name}
             </button>
@@ -154,22 +191,22 @@ export default function StatsC() {
         </div>
 
         {grp && (
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28, opacity: visible ? 1 : 0, transition: 'opacity 0.5s ease' }}>
-            <div style={{ background: t.bgCard, border: `1px solid ${t.border}`, padding: '28px 32px' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 16 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <span style={{ fontSize: 36 }}>{grp.icon}</span>
-                  <div>
-                    <h3 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: 22, color: t.text, margin: 0, fontWeight: 700 }}>{grp.name}</h3>
-                    <span style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 14, color: grp.color, fontStyle: 'italic' }}>{grp.arabic}</span>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 20 : 28, opacity: visible ? 1 : 0, transition: 'opacity 0.5s ease' }}>
+            <div style={{ background: t.bgCard, border: `1px solid ${t.border}`, padding: isMobile ? '22px 20px' : '28px 32px' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 16, gap: 12 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, minWidth: 0 }}>
+                  <span style={{ fontSize: isMobile ? 30 : 36, flexShrink: 0 }}>{grp.icon}</span>
+                  <div style={{ minWidth: 0 }}>
+                    <h3 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: isMobile ? 18 : 22, color: t.text, margin: 0, fontWeight: 700, lineHeight: 1.2 }}>{grp.name}</h3>
+                    <span style={{ fontFamily: 'var(--font-crimson), serif', fontSize: isMobile ? 12 : 14, color: grp.color, fontStyle: 'italic' }}>{grp.arabic}</span>
                   </div>
                 </div>
-                <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontFamily: 'var(--font-playfair), serif', fontSize: 30, color: grp.color, fontWeight: 700, lineHeight: 1 }}>{grp.total}</div>
-                  <div style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 12, color: t.textMuted }}>{grp.pctWorld}% mundial</div>
+                <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                  <div style={{ fontFamily: 'var(--font-playfair), serif', fontSize: isMobile ? 22 : 30, color: grp.color, fontWeight: 700, lineHeight: 1 }}>{grp.total}</div>
+                  <div style={{ fontFamily: 'var(--font-crimson), serif', fontSize: isMobile ? 11 : 12, color: t.textMuted }}>{grp.pctWorld}% mundial</div>
                 </div>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 8, marginBottom: 16 }}>
                 {[{ l: 'Fundado', v: grp.founded }, { l: 'Fundador', v: grp.fundador }, { l: 'Libro sagrado', v: grp.libro }].map(f => (
                   <div key={f.l} style={{ padding: '10px 14px', background: t.bgSec, borderLeft: `2px solid ${grp.color}` }}>
                     <div style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 11, color: t.accent, letterSpacing: '0.12em', textTransform: 'uppercase' }}>{f.l}</div>
@@ -187,9 +224,9 @@ export default function StatsC() {
                 ))}
               </div>
             </div>
-            <div style={{ background: t.bgCard, border: `1px solid ${t.border}`, padding: '28px 32px' }}>
-              <h3 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: 18, color: t.text, margin: '0 0 20px', fontWeight: 700 }}>Países con Mayor Número de Fieles</h3>
-              <div style={{ height: 260 }}><canvas ref={barChartRef} /></div>
+            <div style={{ background: t.bgCard, border: `1px solid ${t.border}`, padding: isMobile ? '22px 20px' : '28px 32px' }}>
+              <h3 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: isMobile ? 16 : 18, color: t.text, margin: '0 0 20px', fontWeight: 700 }}>Países con Mayor Número de Fieles</h3>
+              <div style={{ height: isMobile ? 260 : 260 }}><canvas ref={barChartRef} /></div>
               <p style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 11, color: t.textMuted, marginTop: 16, borderTop: `1px solid ${t.border}`, paddingTop: 10 }}>
                 Cifras en millones · Estimaciones 2024 · Fuentes: Pew Research Center, World Religion Database
               </p>
@@ -197,7 +234,7 @@ export default function StatsC() {
           </div>
         )}
 
-        <div style={{ marginTop: 48, padding: '20px 28px', border: `1px solid ${t.border}`, background: t.bgCard, opacity: visible ? 1 : 0, transition: 'opacity 0.7s ease 0.5s' }}>
+        <div style={{ marginTop: isMobile ? 32 : 48, padding: isMobile ? '18px 20px' : '20px 28px', border: `1px solid ${t.border}`, background: t.bgCard, opacity: visible ? 1 : 0, transition: 'opacity 0.7s ease 0.5s' }}>
           <h4 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: 16, color: t.text, margin: '0 0 10px', fontWeight: 700 }}>Fuentes y Notas Metodológicas</h4>
           <p style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 14, color: t.textMuted, lineHeight: 1.7, margin: 0 }}>
             Los datos presentados provienen de: <strong style={{ color: t.text }}>Pew Research Center</strong> (Global Religious Futures Project 2023–2024), <strong style={{ color: t.text }}>World Religion Database</strong> (Brill), <strong style={{ color: t.text }}>Anuario Pontificio 2024</strong> (Santa Sede), <strong style={{ color: t.text }}>World Christian Database</strong> y <strong style={{ color: t.text }}>Joshua Project 2024</strong>. Los números son estimaciones y pueden variar según metodología.

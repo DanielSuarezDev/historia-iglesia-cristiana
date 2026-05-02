@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useTheme } from '@/context/ThemeContext';
+import { useIsMobile } from '@/lib/useMediaQuery';
 
 type PresenceType = 'Mayoría' | 'Alta presencia' | 'Minoría significativa';
 
@@ -66,15 +67,16 @@ interface CardProps {
 function Card({ icon, value, label, sub, sourceLabel, sourceHref, delay, visible }: CardProps) {
   const { t } = useTheme();
   const [hover, setHover] = useState(false);
+  const isMobile = useIsMobile();
   return (
     <div style={{
-      background: t.bgCard, border: `1px solid ${t.border}`, padding: '28px 32px',
+      background: t.bgCard, border: `1px solid ${t.border}`, padding: isMobile ? '20px 22px' : '28px 32px',
       opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(20px)',
       transition: `opacity 0.6s ease ${delay}s, transform 0.6s ease ${delay}s`,
       display: 'flex', flexDirection: 'column',
     }}>
-      <div style={{ fontSize: 28, marginBottom: 8 }}>{icon}</div>
-      <div style={{ fontFamily: 'var(--font-playfair), serif', fontSize: 36, color: t.accent, fontWeight: 700, lineHeight: 1 }}>{value}</div>
+      <div style={{ fontSize: isMobile ? 24 : 28, marginBottom: 8 }}>{icon}</div>
+      <div style={{ fontFamily: 'var(--font-playfair), serif', fontSize: isMobile ? 28 : 36, color: t.accent, fontWeight: 700, lineHeight: 1 }}>{value}</div>
       <div style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 15, color: t.text, fontWeight: 600, margin: '8px 0 4px' }}>{label}</div>
       <div style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 13, color: t.textMuted, lineHeight: 1.5 }}>{sub}</div>
       <a
@@ -107,6 +109,7 @@ function Card({ icon, value, label, sub, sourceLabel, sourceHref, delay, visible
 
 export default function StatsA() {
   const { t } = useTheme();
+  const isMobile = useIsMobile();
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
   const chartRef = useRef<HTMLCanvasElement>(null);
@@ -155,41 +158,41 @@ export default function StatsA() {
   }, [visible, t]);
 
   return (
-    <section id="secA" ref={sectionRef} style={{ background: t.bg, padding: '100px 0' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 48px' }}>
+    <section id="secA" ref={sectionRef} style={{ background: t.bg, padding: isMobile ? '64px 0' : '100px 0' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '0 18px' : '0 48px' }}>
 
-        <div style={{ marginBottom: 56, opacity: visible ? 1 : 0, transition: 'opacity 0.7s ease' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 16 }}>
-            <div style={{ width: 4, height: 48, background: t.accent }} />
-            <div>
-              <p style={{ fontFamily: 'var(--font-crimson), serif', color: t.accent, letterSpacing: '0.25em', fontSize: 12, textTransform: 'uppercase', margin: '0 0 6px' }}>Sección A</p>
-              <h2 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: 40, color: t.text, margin: 0, fontWeight: 700 }}>Iglesia Católica Romana</h2>
+        <div style={{ marginBottom: isMobile ? 36 : 56, opacity: visible ? 1 : 0, transition: 'opacity 0.7s ease' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 12 : 16, marginBottom: 16 }}>
+            <div style={{ width: 4, height: isMobile ? 36 : 48, background: t.accent, flexShrink: 0 }} />
+            <div style={{ minWidth: 0 }}>
+              <p style={{ fontFamily: 'var(--font-crimson), serif', color: t.accent, letterSpacing: '0.25em', fontSize: isMobile ? 11 : 12, textTransform: 'uppercase', margin: '0 0 6px' }}>Sección A</p>
+              <h2 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: isMobile ? 26 : 40, color: t.text, margin: 0, fontWeight: 700, lineHeight: 1.15 }}>Iglesia Católica Romana</h2>
             </div>
           </div>
-          <p style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 17, color: t.textMuted, maxWidth: 700, lineHeight: 1.7, marginLeft: 20 }}>
+          <p style={{ fontFamily: 'var(--font-crimson), serif', fontSize: isMobile ? 15 : 17, color: t.textMuted, maxWidth: 700, lineHeight: 1.7, marginLeft: isMobile ? 0 : 20 }}>
             La Iglesia Católica Romana es la comunidad cristiana más grande del mundo, con presencia en todos los continentes y una estructura institucional centralizada bajo el liderazgo del Papa en Roma, según datos del Annuario Pontificio 2026.
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, marginBottom: 48 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', gap: isMobile ? 12 : 20, marginBottom: isMobile ? 28 : 48 }}>
           <Card icon="✝" value="1,422M" label="Católicos en el mundo" sub="17.8% de la población global" sourceLabel="Vatican News – Annuario Pontificio 2026" sourceHref="https://www.vaticannews.va/es/vaticano/news/2026-03/publicado-nuevos-datos-del-anuario-pontificio-2026.html" delay={0} visible={visible} />
           <Card icon="🌍" value="126" label="Países con mayoría católica" sub="De 195 países reconocidos" sourceLabel="Pew Research Center" sourceHref="https://www.pewresearch.org/religion/" delay={0.1} visible={visible} />
           <Card icon="👑" value="2,800+" label="Diócesis en el mundo" sub="Divisiones territoriales activas" sourceLabel="Vatican News" sourceHref="https://www.vaticannews.va/en/vatican-city/news/2026-03/new-data-from-annuario-pontificio-2026-shows-catholics-growing.html" delay={0.2} visible={visible} />
           <Card icon="⛪" value="221,700+" label="Parroquias registradas" sub="Congregaciones locales activas" sourceLabel="Vatican / Annuarium Statisticum Ecclesiae" sourceHref="https://www.vatican.va" delay={0.3} visible={visible} />
         </div>
 
-        <div style={{ background: t.bgCard, border: `1px solid ${t.border}`, padding: '28px 32px', marginBottom: 32, opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.2s' }}>
-          <h3 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: 20, color: t.text, margin: '0 0 24px', fontWeight: 700 }}>Distribución por Región</h3>
-          <div style={{ height: 320 }}><canvas ref={chartRef} /></div>
+        <div style={{ background: t.bgCard, border: `1px solid ${t.border}`, padding: isMobile ? '20px 18px' : '28px 32px', marginBottom: isMobile ? 20 : 32, opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.2s' }}>
+          <h3 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: isMobile ? 17 : 20, color: t.text, margin: '0 0 20px', fontWeight: 700 }}>Distribución por Región</h3>
+          <div style={{ height: isMobile ? 260 : 320 }}><canvas ref={chartRef} /></div>
         </div>
 
-        <div style={{ background: t.bgCard, border: `1px solid ${t.border}`, padding: '28px 32px', marginBottom: 32, opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.3s' }}>
-          <h3 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: 20, color: t.text, margin: '0 0 6px', fontWeight: 700 }}>Presencia del Catolicismo por País</h3>
+        <div style={{ background: t.bgCard, border: `1px solid ${t.border}`, padding: isMobile ? '20px 18px' : '28px 32px', marginBottom: isMobile ? 20 : 32, opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.3s' }}>
+          <h3 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: isMobile ? 17 : 20, color: t.text, margin: '0 0 6px', fontWeight: 700, lineHeight: 1.25 }}>Presencia del Catolicismo por País</h3>
           <p style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 13, color: t.textMuted, margin: '0 0 20px', lineHeight: 1.5 }}>
             Selección de 23 países representativos de América Latina, Europa, África, Asia y Oceanía. Ordenados por porcentaje de población católica; en caso de empate, por cantidad total.
           </p>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-crimson), serif', fontSize: 13 }}>
+          <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', margin: isMobile ? '0 -18px' : 0, padding: isMobile ? '0 18px' : 0 }}>
+            <table style={{ width: '100%', minWidth: isMobile ? 560 : 'auto', borderCollapse: 'collapse', fontFamily: 'var(--font-crimson), serif', fontSize: 13 }}>
               <thead>
                 <tr style={{ borderBottom: `1px solid ${t.border}` }}>
                   <th style={{ textAlign: 'left',  padding: '10px 12px', color: t.accent, fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase', fontSize: 11 }}>País</th>
@@ -239,7 +242,7 @@ export default function StatsA() {
           </p>
         </div>
 
-        <div style={{ background: `${t.accent}0c`, border: `1px solid ${t.accent}30`, padding: '20px 28px', display: 'flex', gap: 16, alignItems: 'flex-start', opacity: visible ? 1 : 0, transition: 'opacity 0.7s ease 0.5s' }}>
+        <div style={{ background: `${t.accent}0c`, border: `1px solid ${t.accent}30`, padding: isMobile ? '16px 18px' : '20px 28px', display: 'flex', gap: isMobile ? 12 : 16, alignItems: 'flex-start', opacity: visible ? 1 : 0, transition: 'opacity 0.7s ease 0.5s' }}>
           <div style={{ color: t.accent, fontSize: 20, lineHeight: 1, flexShrink: 0 }}>◈</div>
           <div style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 15, color: t.textMuted, lineHeight: 1.65 }}>
             <strong style={{ color: t.text }}>Tendencia 2024:</strong> El catolicismo crece principalmente en{' '}

@@ -5,7 +5,7 @@ import { useTheme } from '@/context/ThemeContext';
 export default function Footer() {
   const { t } = useTheme();
   return (
-    <footer style={{ background: t.bgCard, borderTop: `1px solid ${t.border}`, padding: '40px 48px' }}>
+    <footer style={{ background: t.bgCard, borderTop: `1px solid ${t.border}`, padding: 'clamp(24px, 5vw, 40px) clamp(18px, 4vw, 48px)' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <svg width="22" height="22" viewBox="0 0 28 28">
@@ -15,7 +15,7 @@ export default function Footer() {
           <span style={{ fontFamily: 'var(--font-playfair), serif', fontSize: 14, color: t.textMuted }}>Historia de la Iglesia Cristiana</span>
         </div>
         <span style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 13, color: t.textMuted }}>
-          Datos ilustrativos con fines educativos · 2024
+          Datos ilustrativos con fines educativos · 2026
         </span>
       </div>
     </footer>

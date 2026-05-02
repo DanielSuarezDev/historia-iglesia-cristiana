@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useTheme } from '@/context/ThemeContext';
 import { ThemeKey } from '@/lib/themes';
+import { useIsMobile } from '@/lib/useMediaQuery';
 
 const OPTIONS: { value: ThemeKey; label: string }[] = [
   { value: 'dark', label: 'Oscuro' },
@@ -13,9 +14,10 @@ const OPTIONS: { value: ThemeKey; label: string }[] = [
 export default function ThemeSwitcher() {
   const { themeKey, setThemeKey, t } = useTheme();
   const [open, setOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   return (
-    <div style={{ position: 'fixed', bottom: 20, right: 20, zIndex: 2000 }}>
+    <div style={{ position: 'fixed', bottom: isMobile ? 14 : 20, right: isMobile ? 14 : 20, zIndex: 2000 }}>
       {open && (
         <div style={{
           position: 'absolute', bottom: 52, right: 0,
