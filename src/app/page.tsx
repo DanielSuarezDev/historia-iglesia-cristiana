@@ -6,6 +6,7 @@ import HeroV2 from '@/components/HeroV2';
 import StatsA from '@/components/StatsA';
 import StatsB from '@/components/StatsB';
 import StatsC from '@/components/StatsC';
+import Timelines from '@/components/Timelines';
 import Footer from '@/components/Footer';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
 import { useTheme } from '@/context/ThemeContext';
@@ -20,6 +21,7 @@ function PageContent() {
         <StatsA />
         <StatsB />
         <StatsC />
+        <Timelines />
       </main>
       <Footer />
       <ThemeSwitcher />

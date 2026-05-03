@@ -8,10 +8,17 @@ export default function NavBar() {
   const { t, themeKey } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeKey, setActiveKey] = useState<'estadisticas' | 'timeline'>('estadisticas');
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 60);
+    const fn = () => {
+      setScrolled(window.scrollY > 60);
+      const tl = document.getElementById('timelines');
+      if (tl && window.scrollY + 140 >= tl.offsetTop) setActiveKey('timeline');
+      else setActiveKey('estadisticas');
+    };
+    fn();
     window.addEventListener('scroll', fn);
     return () => window.removeEventListener('scroll', fn);
   }, []);
@@ -30,10 +37,10 @@ export default function NavBar() {
   const onDark = themeKey === 'modern' && !scrolled;
   const mainTextColor = onDark ? '#c8d8f0' : t.textMuted;
 
-  const mainSections = [
-    { key: 'estadisticas', label: 'Estadísticas', active: true, soon: false },
+  const mainSections: { key: string; label: string; soon?: boolean; targetId?: string }[] = [
+    { key: 'estadisticas', label: 'Estadísticas', targetId: 'secA' },
     { key: 'ensayos', label: 'Ensayos', soon: true },
-    { key: 'timeline', label: 'Líneas de Tiempo', soon: true },
+    { key: 'timeline', label: 'Líneas de Tiempo', targetId: 'timelines' },
     { key: 'galeria', label: 'Galería', soon: true },
   ];
 
@@ -78,15 +85,18 @@ export default function NavBar() {
 
         {!isMobile && (
           <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
-            {mainSections.map(s => (
+            {mainSections.map(s => {
+              const isActive = activeKey === s.key;
+              return (
               <div key={s.key} style={{ position: 'relative' }}>
                 <button
+                  onClick={() => { if (!s.soon && s.targetId) scrollTo(s.targetId); }}
                   style={{
                     background: 'none', border: 'none', cursor: s.soon ? 'default' : 'pointer',
                     fontFamily: 'var(--font-crimson), serif', fontSize: 13, letterSpacing: '0.1em',
-                    color: s.key === 'estadisticas' ? t.accent : mainTextColor,
+                    color: isActive ? t.accent : mainTextColor,
                     textTransform: 'uppercase', padding: '0 16px', height: 52,
-                    borderBottom: s.key === 'estadisticas' ? `2px solid ${t.accent}` : '2px solid transparent',
+                    borderBottom: isActive ? `2px solid ${t.accent}` : '2px solid transparent',
                     opacity: s.soon ? 0.45 : 1, transition: 'all 0.2s',
                     display: 'flex', alignItems: 'center', gap: 6,
                   }}
@@ -99,7 +109,8 @@ export default function NavBar() {
                   )}
                 </button>
               </div>
-            ))}
+              );
+            })}
           </div>
         )}
 
@@ -194,14 +205,19 @@ export default function NavBar() {
             margin: '0 0 12px',
           }}>Secciones</p>
           {mainSections.map(s => (
-            <div key={s.key} style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-              padding: '14px 4px', borderBottom: `1px solid ${t.border}`,
-              opacity: s.soon ? 0.45 : 1,
-            }}>
+            <div
+              key={s.key}
+              onClick={() => { if (!s.soon && s.targetId) scrollTo(s.targetId); }}
+              style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                padding: '14px 4px', borderBottom: `1px solid ${t.border}`,
+                opacity: s.soon ? 0.45 : 1,
+                cursor: s.soon ? 'default' : 'pointer',
+              }}
+            >
               <span style={{
                 fontFamily: 'var(--font-crimson), serif', fontSize: 16,
-                color: s.key === 'estadisticas' ? t.accent : t.text,
+                color: activeKey === s.key ? t.accent : t.text,
                 letterSpacing: '0.05em',
               }}>{s.label}</span>
               {s.soon && (
