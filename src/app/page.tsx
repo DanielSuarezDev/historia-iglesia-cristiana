@@ -7,6 +7,7 @@ import StatsA from '@/components/StatsA';
 import StatsB from '@/components/StatsB';
 import StatsC from '@/components/StatsC';
 import Timelines from '@/components/Timelines';
+import Ensayos from '@/components/Ensayos';
 import Footer from '@/components/Footer';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
 import { useTheme } from '@/context/ThemeContext';
@@ -21,6 +22,7 @@ function PageContent() {
         <StatsA />
         <StatsB />
         <StatsC />
+        <Ensayos />
         <Timelines />
       </main>
       <Footer />

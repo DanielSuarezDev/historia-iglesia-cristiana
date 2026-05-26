@@ -3,19 +3,25 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTheme } from '@/context/ThemeContext';
 import { useIsMobile } from '@/lib/useMediaQuery';
-import TimelineCentury1 from './TimelineCentury1';
+import TimelineCentury from './TimelineCentury';
+import TimelinePersecuciones from './TimelinePersecuciones';
+import { CENTURIES_DATA } from '@/data/centuries';
+import { CONCILIOS } from '@/data/concilios';
 
-type TabKey = 'siglos' | 'persecuciones';
+type TabKey = 'siglos' | 'persecuciones' | 'concilios';
 
 const TABS: { key: TabKey; label: string; soon?: boolean }[] = [
   { key: 'siglos', label: 'Siglos' },
-  { key: 'persecuciones', label: 'Persecuciones', soon: true },
+  { key: 'persecuciones', label: 'Persecuciones' },
+  { key: 'concilios', label: 'Concilios' },
 ];
+
+const ENABLED_CENTURIES = new Set<number>([1, 2]);
 
 const CENTURIES = Array.from({ length: 21 }, (_, i) => ({
   num: i + 1,
   roman: toRoman(i + 1),
-  available: i === 0,
+  available: !!CENTURIES_DATA[i + 1] && ENABLED_CENTURIES.has(i + 1),
 }));
 
 function toRoman(n: number): string {
@@ -150,42 +156,23 @@ export default function Timelines() {
               })}
             </div>
 
-            {century === 1 && <TimelineCentury1 />}
+            {CENTURIES_DATA[century] && <TimelineCentury century={CENTURIES_DATA[century]} />}
           </div>
         )}
 
         {tab === 'persecuciones' && (
-          <ComingSoon
-            title="Persecuciones"
-            text="Próximamente: una línea de tiempo dedicada a las grandes persecuciones contra los cristianos, desde Nerón (64) hasta Diocleciano (303–311), pasando por las olas locales del siglo II y III."
-          />
+          <div style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.2s' }}>
+            <TimelinePersecuciones />
+          </div>
+        )}
+
+        {tab === 'concilios' && (
+          <div style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.2s' }}>
+            <TimelineCentury century={CONCILIOS} labelPrefix="Concilio" forceVertical />
+          </div>
         )}
       </div>
     </section>
   );
 }
 
-function ComingSoon({ title, text }: { title: string; text: string }) {
-  const { t } = useTheme();
-  const isMobile = useIsMobile();
-  return (
-    <div style={{
-      background: t.bgCard, border: `1px dashed ${t.border}`,
-      padding: isMobile ? '32px 22px' : '56px 48px',
-      textAlign: 'center',
-    }}>
-      <div style={{
-        fontFamily: 'var(--font-crimson), serif', fontSize: 11, color: t.accent,
-        letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: 12,
-      }}>En preparación</div>
-      <h3 style={{
-        fontFamily: 'var(--font-playfair), serif', fontSize: isMobile ? 22 : 28,
-        color: t.text, margin: '0 0 12px', fontWeight: 700,
-      }}>{title}</h3>
-      <p style={{
-        fontFamily: 'var(--font-crimson), serif', fontSize: isMobile ? 14 : 16,
-        color: t.textMuted, lineHeight: 1.7, maxWidth: 560, margin: '0 auto',
-      }}>{text}</p>
-    </div>
-  );
-}

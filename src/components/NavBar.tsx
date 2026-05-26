@@ -8,14 +8,17 @@ export default function NavBar() {
   const { t, themeKey } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeKey, setActiveKey] = useState<'estadisticas' | 'timeline'>('estadisticas');
+  const [activeKey, setActiveKey] = useState<'estadisticas' | 'ensayos' | 'timeline'>('estadisticas');
   const isMobile = useIsMobile();
 
   useEffect(() => {
     const fn = () => {
       setScrolled(window.scrollY > 60);
       const tl = document.getElementById('timelines');
-      if (tl && window.scrollY + 140 >= tl.offsetTop) setActiveKey('timeline');
+      const en = document.getElementById('ensayos');
+      const y = window.scrollY + 140;
+      if (tl && y >= tl.offsetTop) setActiveKey('timeline');
+      else if (en && y >= en.offsetTop) setActiveKey('ensayos');
       else setActiveKey('estadisticas');
     };
     fn();
@@ -39,7 +42,7 @@ export default function NavBar() {
 
   const mainSections: { key: string; label: string; soon?: boolean; targetId?: string }[] = [
     { key: 'estadisticas', label: 'Estadísticas', targetId: 'secA' },
-    { key: 'ensayos', label: 'Ensayos', soon: true },
+    { key: 'ensayos', label: 'Ensayos', targetId: 'ensayos' },
     { key: 'timeline', label: 'Líneas de Tiempo', targetId: 'timelines' },
     { key: 'galeria', label: 'Galería', soon: true },
   ];
