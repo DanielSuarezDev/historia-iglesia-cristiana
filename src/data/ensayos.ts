@@ -69,4 +69,45 @@ const E1: Essay = {
   ],
 };
 
-export const ESSAYS: Essay[] = [E1];
+const E2: Essay = {
+  slug: 'ignacio-antioquia',
+  title: 'Ignacio de Antioquía',
+  subtitle: 'El obispo que caminó hacia los leones escribiendo cartas',
+  period: 'c. 107 d.C.',
+  readingTime: '5 min',
+  icon: '🦁',
+  excerpt: 'Camino a su ejecución en Roma, un anciano discípulo del apóstol Juan escribió siete cartas que se volverían piedra angular del cristianismo primitivo. En una de ellas aparece, por primera vez, la expresión «iglesia católica». Conviene aclarar enseguida qué significaba.',
+  sections: [
+    {
+      heading: 'Un anciano camino del Coliseo',
+      body: 'Hacia el año 107 d.C., bajo el emperador Trajano, fue arrestado en Siria un anciano llamado Ignacio. Era el segundo o tercer obispo de Antioquía, una de las grandes capitales del cristianismo primitivo —allí, dice el libro de los Hechos, los discípulos fueron llamados «cristianos» por primera vez (Hechos 11:26)—. La tradición más antigua lo cuenta como discípulo directo del apóstol Juan, lo que hace de él un puente vivo entre la generación apostólica y la siguiente. Condenado a morir devorado por las fieras, fue enviado a Roma escoltado por diez soldados a los que llamaba, con humor amargo, «mis diez leopardos».',
+    },
+    {
+      heading: 'Siete cartas escritas en cadenas',
+      body: 'Durante el largo viaje terrestre hacia Roma, Ignacio fue recibido por comunidades cristianas en cada parada. Aprovechó para escribir siete cartas que han llegado hasta nosotros: a las iglesias de Éfeso, Magnesia, Tralles, Roma, Filadelfia y Esmirna, y una más a Policarpo, obispo de esta última y también discípulo de Juan. Son textos breves, ardientes, escritos con prisa. En ellos defiende tres cosas que le importaban casi por igual: la unidad de la Iglesia en torno al obispo, la realidad del cuerpo de Cristo —contra quienes decían que la encarnación había sido pura apariencia— y su deseo de morir mártir sin que nadie intentara salvarlo.',
+    },
+    {
+      heading: '«Iglesia católica»: una palabra que conviene aclarar',
+      body: 'En la carta a los esmirniotas aparece por primera vez en toda la literatura cristiana la expresión «iglesia católica»: «Donde está Jesucristo, allí está la iglesia católica». Aquí hay que detenerse. «Católica» viene del griego katholiké, que significa simplemente «universal», «entera», «completa». Ignacio no está hablando de lo que hoy conocemos como Iglesia Católica Romana —esa institución, con su papado consolidado, sus dogmas particulares y su estructura jurídica, tomará forma a lo largo de los siglos siguientes y especialmente desde la Edad Media—. Ignacio está diciendo otra cosa: que la Iglesia verdadera es la que está extendida por todo el mundo y unida en Cristo, frente a las pequeñas sectas locales que ya empezaban a separarse. En su boca, «católica» es un adjetivo, no una denominación.',
+    },
+    {
+      heading: 'Trigo de Dios',
+      body: 'La carta más famosa es la dirigida a los cristianos de Roma. En ella les suplica con una intensidad casi incómoda que no muevan influencias para librarlo de la muerte: «Soy trigo de Dios y debo ser molido por los dientes de las fieras para llegar a ser pan puro de Cristo». No es fanatismo desesperado; es la convicción serena de que morir como murió Cristo es la forma más limpia de seguirlo. Llegado a Roma —probablemente al Coliseo o al Circo Flaminio—, fue despedazado por leones ante una multitud para la que aquello era simple espectáculo.',
+    },
+    {
+      heading: 'Lo que nos dejó',
+      body: 'Ignacio fija dos cosas que marcarán la historia cristiana. Primero, la figura del obispo como garantía de unidad: en una época en la que cada ciudad podía inventarse su propio evangelio, él insiste en que «nada se haga sin el obispo». Segundo, el modelo del mártir gozoso, que va a la muerte sin huida y sin maldición. Sus siete cartas son, junto a las de Clemente de Roma, el testimonio cristiano más antiguo fuera del Nuevo Testamento. Y aquella expresión suya —«iglesia católica»— quedó en el vocabulario común de todos los cristianos: católicos romanos, ortodoxos y protestantes la siguen recitando cada domingo en el Credo, cada uno entendiéndola a su manera, pero todos remontándose, sin saberlo a veces, a un anciano que caminaba hacia los leones escribiendo cartas.',
+    },
+  ],
+  quote: {
+    text: '«Donde está Jesucristo, allí está la iglesia católica.»',
+    ref: 'Ignacio de Antioquía, Carta a los Esmirniotas 8, 2',
+  },
+  sources: [
+    { label: 'Cartas de Ignacio de Antioquía (texto)', href: 'https://www.newadvent.org/fathers/0104.htm' },
+    { label: 'Britannica — Ignatius of Antioch', href: 'https://www.britannica.com/biography/Saint-Ignatius-of-Antioch' },
+    { label: 'Padres Apostólicos (textos originales)', href: 'https://www.earlychristianwritings.com/' },
+  ],
+};
+
+export const ESSAYS: Essay[] = [E1, E2];
