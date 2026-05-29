@@ -16,7 +16,7 @@ const TABS: { key: TabKey; label: string; soon?: boolean }[] = [
   { key: 'concilios', label: 'Concilios' },
 ];
 
-const ENABLED_CENTURIES = new Set<number>([1, 2]);
+const ENABLED_CENTURIES = new Set<number>([1, 2, 3, 4]);
 
 const CENTURIES = Array.from({ length: 21 }, (_, i) => ({
   num: i + 1,
