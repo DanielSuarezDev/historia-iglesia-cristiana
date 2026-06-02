@@ -14,6 +14,18 @@ export default function Footer() {
           </svg>
           <span style={{ fontFamily: 'var(--font-playfair), serif', fontSize: 14, color: t.textMuted }}>Historia de la Iglesia Cristiana</span>
         </div>
+        <a
+          href="#suscribete"
+          style={{
+            fontFamily: 'var(--font-crimson), serif', fontSize: 12, color: t.accent,
+            letterSpacing: '0.18em', textTransform: 'uppercase', textDecoration: 'none',
+            display: 'inline-flex', alignItems: 'center', gap: 6, transition: 'opacity 0.2s',
+          }}
+          onMouseEnter={e => { e.currentTarget.style.opacity = '0.7'; }}
+          onMouseLeave={e => { e.currentTarget.style.opacity = '1'; }}
+        >
+          Suscríbete <span style={{ fontSize: 14 }}>→</span>
+        </a>
         <span style={{ fontFamily: 'var(--font-crimson), serif', fontSize: 13, color: t.textMuted }}>
           Datos ilustrativos con fines educativos · 2026
         </span>

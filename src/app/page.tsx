@@ -8,6 +8,7 @@ import StatsB from '@/components/StatsB';
 import StatsC from '@/components/StatsC';
 import Timelines from '@/components/Timelines';
 import Ensayos from '@/components/Ensayos';
+import Subscribe from '@/components/Subscribe';
 import Footer from '@/components/Footer';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
 import { useTheme } from '@/context/ThemeContext';
@@ -24,6 +25,7 @@ function PageContent() {
         <StatsC />
         <Ensayos />
         <Timelines />
+        <Subscribe />
       </main>
       <Footer />
       <ThemeSwitcher />
