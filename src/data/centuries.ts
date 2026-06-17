@@ -176,6 +176,20 @@ const C2: CenturyData = {
       ],
     },
     {
+      year: 165, yearLabel: 'c. 165 d.C.', title: 'Martirio de Justino', short: 'El filósofo que defendió la fe como «verdadera filosofía»', icon: '🏛',
+      intro: 'Justino, nacido pagano en Samaria, recorrió todas las escuelas filosóficas de su tiempo antes de convertirse al cristianismo. Abrió una escuela en Roma y escribió las primeras grandes apologías dirigidas a los emperadores. Bajo Marco Aurelio es decapitado junto a seis discípulos.',
+      paragraphs: [
+        { heading: 'La fe como filosofía', body: 'Frente a Celso y a los paganos cultos que despreciaban a los cristianos por ignorantes, Justino sostuvo lo contrario: el cristianismo no es una superstición de incultos, sino la «verdadera filosofía». Enseñó que las semillas del Logos divino estaban repartidas también en Sócrates y Platón, y que en Cristo esa Razón se había revelado entera. Inauguró así la tradición de un cristianismo que dialoga con la cultura en vez de ignorarla.' },
+        { heading: '"No lo creo, lo sé"', body: 'Conservamos el acta de su juicio ante el prefecto Rústico. Cuando este le pregunta si cree que al ser decapitado subirá al cielo, Justino responde: «No lo creo, lo sé». Lo ejecutan con seis compañeros. Pasa a la historia como Justino Mártir, el apologista que selló con su sangre lo que había defendido con la pluma.' },
+      ],
+      quote: { text: '“No lo creo, lo sé.”', ref: 'Actas del martirio de Justino, ante el prefecto Rústico' },
+      legacy: 'Justino abre una vía decisiva: la del cristianismo que razona y dialoga con la filosofía, no solo el que predica y muere. Sus apologías son el primer intento serio de explicar la fe en las categorías de la cultura grecorromana, y sus discípulos prolongarán esa tarea entre los Padres de la Iglesia.',
+      sources: [
+        { label: 'Justino — Apologías y Diálogo con Trifón', href: 'https://www.newadvent.org/fathers/0126.htm' },
+        { label: 'Britannica — Justin Martyr', href: 'https://www.britannica.com/biography/Saint-Justin-Martyr' },
+      ],
+    },
+    {
       year: 180, yearLabel: 'c. 180 d.C.', title: 'Ireneo y Contra las herejías', short: 'Primera gran síntesis teológica', icon: '📚',
       intro: 'Ireneo, obispo de Lyon y discípulo de Policarpo, publica Adversus Haereses, cinco libros contra el gnosticismo. La obra es la primera teología sistemática cristiana y la primera defensa razonada de la regla de fe.',
       paragraphs: [

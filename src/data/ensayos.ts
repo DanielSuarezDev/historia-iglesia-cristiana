@@ -228,4 +228,110 @@ const E4: Essay = {
   ],
 };
 
-export const ESSAYS: Essay[] = [E1, E2, E3, E4];
+const E5: Essay = {
+  slug: 'celso',
+  title: 'Celso',
+  subtitle: 'El primer intelectual pagano que se tomó en serio al cristianismo para destruirlo',
+  period: 'c. 175 – 180 d.C.',
+  readingTime: '7 min',
+  icon: '🏛️',
+  excerpt: 'Un filósofo culto miró a los cristianos no con el desprecio de la calle, sino con los argumentos de la escuela. Escribió el primer ataque razonado contra la nueva fe. Lo conocemos, irónicamente, solo porque el cristiano que lo refutó copió casi entero su libro para rebatirlo línea por línea.',
+  sections: [
+    {
+      heading: 'Un enemigo que solo conocemos por su rival',
+      body: 'Hay una paradoja en el corazón de esta historia. Del libro de Celso no se conserva ni un solo ejemplar; desapareció hace más de mil quinientos años. Y sin embargo podemos leer hoy unas tres cuartas partes de lo que escribió. ¿Cómo? Porque hacia el año 248 d.C., casi setenta años después, un gran maestro cristiano de Alejandría llamado Orígenes decidió responderle con una obra titulada Contra Celso. Para refutarlo con honradez, Orígenes fue citando el texto de Celso frase por frase antes de contestar a cada una. Así, sin quererlo, se convirtió en el copista de su propio adversario: gracias a las comillas de un cristiano hemos recuperado el primer gran ataque pagano contra el cristianismo.',
+    },
+    {
+      heading: '¿Quién era Celso?',
+      body: 'Sabemos poco de él con certeza, y eso incomodaba ya al propio Orígenes, que no estaba seguro ni de a qué escuela filosófica pertenecía. Por momentos lo tomó por epicúreo, pero los argumentos del libro son claramente los de un platónico: un hombre formado en la tradición de Platón, convencido de que existe un Dios supremo, lejano e inmutable, al que se llega por la razón y no por la fe de los humildes. Escribió hacia el año 178 d.C., en una época en que el cristianismo había dejado de ser una curiosidad marginal para volverse un fenómeno visible en todo el Imperio. Celso no es el vecino que repite rumores sobre los cristianos; es el primer intelectual que se sienta a estudiarlos —leyó sus Escrituras, conoció sus debates internos— precisamente para demolerlos mejor.',
+    },
+    {
+      heading: 'El Discurso Verdadero',
+      body: 'Su obra se titulaba El Discurso Verdadero (en griego, Alethés Lógos). El título ya es una provocación: frente a la «palabra» o «razón» —el Lógos— que los cristianos atribuían a Cristo, Celso ofrece la palabra verdadera, la razón auténtica, la del orden antiguo del mundo. Es, que sepamos, el primer tratado entero dedicado a refutar el cristianismo desde la filosofía. No se conforma con insultar: argumenta. Y construye su ataque con una estrategia retórica astuta que conviene explicar, porque es la columna de todo el libro.',
+    },
+    {
+      heading: 'El judío inventado',
+      body: 'En la primera parte de su obra, Celso no habla por sí mismo: pone sus acusaciones en boca de un judío imaginario que discute con Jesús y con sus seguidores. Es un truco hábil. Al usar a un judío como portavoz, Celso ataca al cristianismo desde dentro de su propia raíz: «vuestra fe nace del judaísmo, y ni siquiera los judíos, de quienes la tomasteis, os aceptan». De paso, retrata a la nueva religión como una doble traición: una secta que abandonó la tradición de Israel sin volverse por ello respetable a ojos de Grecia y Roma. Para Celso, el cristianismo no es ni lo bastante antiguo ni lo bastante racional: es un advenedizo sin pedigrí.',
+    },
+    {
+      heading: 'Jesús, el mago nacido en la vergüenza',
+      body: 'Por boca de su judío, Celso lanza las acusaciones más crudas, las que circulaban como rumor y él convierte en arma. Sostiene que Jesús no nació de una virgen, sino de una aldeana pobre, hilandera, expulsada por su marido tras quedar embarazada de un soldado romano llamado Pantera. Que de niño emigró a Egipto, donde aprendió las artes mágicas, y que volvió haciéndose pasar por dios gracias a esos trucos. Sus milagros, dice Celso, no prueban nada: cualquier hechicero de feria hace prodigios parecidos por unas monedas. Y la resurrección, el centro de la fe cristiana, la reduce a la alucinación de «una mujer histérica» y de unos cuantos seguidores crédulos que vieron lo que querían ver. Es un retrato deliberadamente sórdido, pensado para arrancarle a Jesús toda dignidad divina.',
+    },
+    {
+      heading: '«No examines, solo cree»',
+      body: 'Pero el golpe más profundo de Celso no es contra Jesús, sino contra el modo de pensar de los cristianos. Para un filósofo griego, la verdad se alcanza examinando, preguntando, discutiendo. Y Celso acusa a los cristianos de predicar justo lo contrario: «no examines, solo cree», «tu fe te salvará». Se burla de que la nueva religión, en lugar de buscar a los sabios, busque a propósito a los ignorantes —esclavos, mujeres, niños, gente sin instrucción— como si la estupidez fuera una credencial. Donde la filosofía exige razones, el cristianismo —dice él— exige sumisión. Esta acusación de irracionalidad será, durante siglos, el reproche favorito del paganismo culto contra la Iglesia, y obligó a los cristianos a demostrar que su fe también podía dar razón de sí misma.',
+    },
+    {
+      heading: 'Una amenaza para el Imperio',
+      body: 'Celso no era solo un filósofo molesto: era un patriota preocupado. En la última parte de su libro deja la burla y adopta un tono casi de súplica. Le inquieta que los cristianos formen una sociedad cerrada que se niega a participar en la vida común: no honran a los dioses que protegen al Imperio, rehúyen los cargos públicos, recelan del ejército. Para Celso, si todos hicieran como ellos, el mundo civilizado se vendría abajo y caería en manos de los bárbaros. Por eso termina con una invitación: que los cristianos abandonen su exclusivismo, rindan culto al emperador, colaboren con el orden establecido. No pide que renieguen de su Dios; pide que dejen de comportarse como si el suyo fuera el único. En esa exigencia late ya el conflicto que llenará de mártires los dos siglos siguientes.',
+    },
+    {
+      heading: 'Lo que nos dejó Celso',
+      body: 'El silencio fue, al principio, la única respuesta: durante décadas ningún cristiano se molestó en contestarle. Solo hacia el 248, animado por su protector Ambrosio, Orígenes tomó el viejo libro y lo refutó punto por punto, dejándonos de paso el texto que sin él habríamos perdido. La importancia de Celso es doble. Por un lado, marca el momento en que el cristianismo se vuelve lo bastante importante como para que la elite intelectual del paganismo lo considere un enemigo serio, digno de un tratado. Por otro, sus objeciones —¿es razonable la fe?, ¿no es Jesús un simple hombre divinizado?, ¿no disuelven los cristianos el orden social?— obligaron a la Iglesia a pensar con rigor y a responder con filosofía, no solo con testimonio. Celso quiso enterrar al cristianismo bajo el peso de la razón griega. Acabó siendo, muy a su pesar, uno de los maestros que empujaron a los cristianos a razonar.',
+    },
+  ],
+  quote: {
+    text: '«Que no se acerque ninguno educado, ninguno sabio, ninguno sensato; pero el ignorante, el necio, el inculto, el niño: que venga con confianza.»',
+    ref: 'Celso, El Discurso Verdadero (citado por Orígenes, Contra Celso III, 44)',
+  },
+  sources: [
+    { label: 'Orígenes — Contra Celso (texto)', href: 'https://www.newadvent.org/fathers/0416.htm' },
+    { label: 'Celso — El Discurso Verdadero (fragmentos y estudio)', href: 'https://www.earlychristianwritings.com/celsus.html' },
+    { label: 'Britannica — Celsus', href: 'https://www.britannica.com/biography/Celsus-Platonic-philosopher' },
+  ],
+};
+
+const E6: Essay = {
+  slug: 'porfirio',
+  title: 'Porfirio',
+  subtitle: 'El crítico tan peligroso que mandaron quemar todos sus libros',
+  period: 'c. 234 – 305 d.C.',
+  readingTime: '8 min',
+  icon: '📕',
+  excerpt: 'Un filósofo brillante, discípulo del mayor pensador de su tiempo, dedicó quince libros a desmontar el cristianismo. No con insultos, sino con erudición: comparó textos, detectó contradicciones, fechó documentos. Anticipó en mil quinientos años a la crítica bíblica moderna. Por eso los emperadores cristianos ordenaron borrar su obra de la faz de la tierra.',
+  sections: [
+    {
+      heading: 'El discípulo de Plotino',
+      body: 'Porfirio nació hacia el año 234 d.C. en Tiro, en la actual costa del Líbano. Su nombre original era semita, Malco («rey»), que tradujo al griego como Porphýrios, «el de la púrpura», el color de la realeza. Fue un sabio de cultura inmensa: escribió sobre lógica, música, gramática, vegetarianismo y filosofía. Pero su gloria mayor fue convertirse en el discípulo predilecto de Plotino, el fundador del neoplatonismo y el filósofo más influyente de la antigüedad tardía. Cuando Plotino murió, fue Porfirio quien ordenó y publicó sus escritos —las famosas Enéadas— y quien redactó su biografía. Era, en suma, lo más parecido a un heredero intelectual del pensamiento griego. Y ese hombre, en la cima de su prestigio, decidió escribir la refutación más demoledora que el paganismo produjo jamás contra la fe cristiana.',
+    },
+    {
+      heading: 'Contra los cristianos',
+      body: 'Su obra se llamaba Contra los cristianos (en griego, Katá Christianón) y constaba de quince libros. No conservamos ninguno completo: lo que sabemos de ella viene de las citas de quienes intentaron rebatirla. Pero por esos fragmentos se adivina una obra distinta a la de Celso. Donde Celso argumentaba como filósofo, Porfirio investigaba como erudito. No se limitaba a decir que el cristianismo era irracional; abría sus libros sagrados, los comparaba entre sí, examinaba sus fechas, rastreaba sus contradicciones. Fue, en el sentido más literal, el primer crítico de la Biblia de la historia, y sus métodos eran asombrosamente parecidos a los que la erudición no recuperaría hasta el siglo XIX.',
+    },
+    {
+      heading: 'El primer crítico bíblico: el caso de Daniel',
+      body: 'Su hallazgo más célebre tiene que ver con el libro de Daniel. Los cristianos lo leían como una profecía: un Daniel del siglo VI a.C. habría anunciado, con siglos de antelación, el desfile de imperios que culminaría —según ellos— en Cristo. Porfirio examinó el texto con ojo de filólogo y concluyó algo revolucionario: el libro no fue escrito por un profeta antiguo, sino por un autor judío del siglo II a.C., en tiempos de las persecuciones del rey Antíoco IV. Lo que parecían profecías asombrosamente exactas eran, en realidad, historia ya ocurrida disfrazada de predicción: por eso acertaban hasta cierta fecha y se volvían vagas después. En otras palabras, Daniel no predecía el futuro, narraba el pasado. Hoy la mayoría de los especialistas, incluidos muchos cristianos, fechan Daniel justo donde lo puso Porfirio. Tardó mil quinientos años en ganar la discusión, pero la ganó.',
+    },
+    {
+      heading: 'Las grietas de los evangelios',
+      body: 'Porfirio aplicó la misma lupa a los evangelios y a los apóstoles. Señaló que los relatos no siempre coinciden entre sí: discrepan en las genealogías de Jesús, en la hora de la crucifixión, en las palabras de la cruz, en los detalles de la resurrección. Si todos venían de Dios, preguntaba, ¿por qué se contradicen como testigos que no se han puesto de acuerdo? Tampoco perdonó a los apóstoles. Recordó el episodio en que Pablo reprende a Pedro en público (carta a los Gálatas) y lo usó como prueba de que los propios fundadores de la Iglesia ni se entendían entre sí: uno acusaba al otro de hipocresía. A Pedro lo pintó como un hombre temeroso e inconstante; a Pablo, como un converso lleno de contradicciones. No era difamación de taberna: era análisis de texto, hecho con los evangelios abiertos sobre la mesa.',
+    },
+    {
+      heading: 'Contra el truco de la alegoría',
+      body: 'Los cristianos cultos tenían una defensa preparada para los pasajes incómodos del Antiguo Testamento: la alegoría. Cuando un relato resultaba absurdo o inmoral tomado al pie de la letra, decían que no había que leerlo literalmente, sino buscar su sentido «espiritual» escondido. El gran maestro de este método había sido precisamente Orígenes, el mismo que refutó a Celso. Porfirio —que, según cuenta, había conocido de joven los escritos de Orígenes— atacó ese recurso de frente: la alegoría, dijo, no es interpretación, es una excusa. Un truco para no admitir que el texto, leído como está escrito, dice cosas indefendibles. Cuando algo en la Escritura es vergonzoso, el cristiano lo declara «símbolo» y así se libra de explicarlo. Era una acusación afilada, porque tocaba el método mismo con que la Iglesia salvaba sus textos más difíciles.',
+    },
+    {
+      heading: '¿Por qué tan tarde y para tan pocos?',
+      body: 'Como buen platónico, Porfirio tenía además objeciones de fondo, las grandes preguntas de la razón pagana. Si Cristo era el único camino de salvación, ¿qué fue de todas las generaciones que vivieron y murieron antes de él, sin culpa de no haberlo conocido? ¿Por qué un Dios justo esperó tantos siglos, y reveló su verdad en un rincón perdido del Imperio, a un puñado de pescadores iletrados, en lugar de mostrarla a todos los pueblos desde el principio? Un Dios verdaderamente universal, razonaba, no se comportaría como un secreto reservado a unos pocos en un momento tardío de la historia. Estas preguntas —el escándalo de la particularidad— siguen discutiéndose dieciocho siglos después. Porfirio fue de los primeros en formularlas con toda su fuerza.',
+    },
+    {
+      heading: 'El libro que mandaron quemar',
+      body: 'La medida del miedo que inspiró Porfirio es lo que se hizo con su obra. Cuando el Imperio se volvió cristiano, Contra los cristianos no fue simplemente refutado: fue prohibido y destruido. El emperador Constantino ordenó quemar sus ejemplares, y en el año 448 los emperadores Teodosio II y Valentiniano III repitieron la orden, mandando arrojar al fuego todas las copias que quedaran. Por eso el libro se nos ha perdido: no porque nadie lo leyera, sino porque demasiados lo leyeron. Los grandes nombres de la Iglesia se sintieron obligados a contestarle —Eusebio de Cesarea le dedicó veinticinco libros, hoy también perdidos; lo hicieron Metodio, Apolinar, Agustín—. Que tantos sabios cristianos gastaran tanta tinta en un solo adversario dice más sobre su talla que cualquier elogio. Porfirio fue el enemigo al que no bastaba con responder: había que silenciar.',
+    },
+    {
+      heading: 'Lo que nos dejó Porfirio',
+      body: 'Su sombra es larga y, en cierto modo, irónica. Quiso destruir el cristianismo y, al obligar a los cristianos a defenderse, los empujó a afinar su erudición, a estudiar mejor sus propios textos, a tomarse en serio las fechas, los idiomas y las contradicciones. Muchas de sus preguntas no han envejecido: la crítica bíblica moderna, sin saberlo, recorrió de nuevo caminos que él abrió. Su análisis de Daniel se enseña hoy en las facultades de teología; sus objeciones sobre las contradicciones de los evangelios y sobre el momento de la revelación siguen vivas en cualquier debate sobre la fe. Celso había atacado al cristianismo con los argumentos de la filosofía; Porfirio lo atacó con las herramientas de la ciencia del texto. Entre los dos trazaron el mapa de casi todas las objeciones que la razón le haría a la Iglesia en los siglos venideros. Que sus libros ardieran no apagó sus preguntas: solo demostró cuánto pesaban.',
+    },
+  ],
+  quote: {
+    text: '«Lo que se cuenta en el libro de Daniel no fue predicho, sino narrado: no es profecía del porvenir, sino historia del pasado disfrazada de profecía.»',
+    ref: 'Porfirio, Contra los cristianos (resumido por Jerónimo, Comentario a Daniel)',
+  },
+  sources: [
+    { label: 'Jerónimo — Comentario a Daniel (preserva a Porfirio)', href: 'https://www.tertullian.org/fathers/jerome_daniel_02_text.htm' },
+    { label: 'Britannica — Porphyry', href: 'https://www.britannica.com/biography/Porphyry-Greek-philosopher' },
+    { label: 'Textos cristianos antiguos (refutaciones)', href: 'https://www.earlychristianwritings.com/' },
+  ],
+};
+
+export const ESSAYS: Essay[] = [E1, E2, E3, E4, E5, E6];
