@@ -7,16 +7,18 @@ import TimelineCentury from './TimelineCentury';
 import TimelinePersecuciones from './TimelinePersecuciones';
 import { CENTURIES_DATA } from '@/data/centuries';
 import { CONCILIOS } from '@/data/concilios';
+import { ERRORES } from '@/data/errores';
 
-type TabKey = 'siglos' | 'persecuciones' | 'concilios';
+type TabKey = 'siglos' | 'persecuciones' | 'concilios' | 'errores';
 
 const TABS: { key: TabKey; label: string; soon?: boolean }[] = [
   { key: 'siglos', label: 'Siglos' },
   { key: 'persecuciones', label: 'Persecuciones' },
   { key: 'concilios', label: 'Concilios' },
+  { key: 'errores', label: 'Desviaciones doctrinales' },
 ];
 
-const ENABLED_CENTURIES = new Set<number>([1, 2, 3, 4]);
+const ENABLED_CENTURIES = new Set<number>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]);
 
 const CENTURIES = Array.from({ length: 21 }, (_, i) => ({
   num: i + 1,
@@ -169,6 +171,12 @@ export default function Timelines() {
         {tab === 'concilios' && (
           <div style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.2s' }}>
             <TimelineCentury century={CONCILIOS} labelPrefix="Concilio" forceVertical />
+          </div>
+        )}
+
+        {tab === 'errores' && (
+          <div style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.2s' }}>
+            <TimelineCentury century={ERRORES} labelPrefix="Desviación" forceVertical />
           </div>
         )}
       </div>

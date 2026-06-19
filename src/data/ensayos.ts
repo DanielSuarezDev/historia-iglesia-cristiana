@@ -334,4 +334,199 @@ const E6: Essay = {
   ],
 };
 
-export const ESSAYS: Essay[] = [E1, E2, E3, E4, E5, E6];
+const E7: Essay = {
+  slug: 'desarrollo-papal',
+  title: 'La era del desarrollo papal',
+  subtitle: 'Cómo el obispo de Roma pasó de pastor de una ciudad a árbitro de la cristiandad',
+  period: '325 – 1215 d.C.',
+  readingTime: '12 min',
+  icon: '⛪',
+  excerpt: 'En el año 325, el obispo de Roma era uno más entre los grandes patriarcas de la Iglesia. Novecientos años después, un papa podía deponer reyes, convocar cruzadas y reunir a toda la cristiandad en un concilio. Esta es la historia de cómo ocurrió esa transformación: entre la caída de un imperio, una donación falsificada, un emperador arrodillado en la nieve y un papa que se llamó a sí mismo «vicario de Cristo».',
+  sections: [
+    {
+      heading: 'Un punto de partida modesto',
+      body: 'Conviene empezar deshaciendo un malentendido. En tiempos del Concilio de Nicea (325), el obispo de Roma no gobernaba la Iglesia como lo hará un papa medieval. La cristiandad se organizaba en torno a varias sedes de gran prestigio —Roma, Alejandría, Antioquía y, pronto, Constantinopla y Jerusalén—, los llamados patriarcados. Roma gozaba de un honor especial: era la antigua capital del Imperio y, sobre todo, la ciudad donde habían sido martirizados Pedro y Pablo. Pero «honor» y «primacía de honor» no significaban todavía mando directo sobre los demás obispos. El camino que va de ese respeto reverente al poder universal del papado tardó casi mil años en recorrerse, y no fue una línea recta, sino una sucesión de crisis, vacíos de poder y decisiones audaces.',
+    },
+    {
+      heading: 'La teoría: Pedro y su silla',
+      body: 'La base de todo el edificio fue una idea: la de que el obispo de Roma era el sucesor de Pedro. Los cristianos leían en el Evangelio de Mateo las palabras de Jesús: «Tú eres Pedro, y sobre esta piedra edificaré mi Iglesia… a ti te daré las llaves del Reino de los cielos» (Mateo 16:18-19). Roma sostuvo que, como Pedro había sido el primero entre los apóstoles y había muerto en Roma, sus obispos heredaban esa primacía. El primer papa que formuló esta doctrina con plena fuerza jurídica fue León I, llamado León Magno (440-461). León enseñó que en cada papa seguía hablando y gobernando el propio Pedro: el papa no tenía autoridad por sí mismo, sino como heredero vivo del apóstol. No era una idea nueva del todo, pero León la convirtió en doctrina clara y la respaldó con su persona.',
+    },
+    {
+      heading: 'León Magno: la voz de Pedro',
+      body: 'León vivió dos momentos que dieron cuerpo a su teoría. En el Concilio de Calcedonia (451), su carta doctrinal —el Tomo a Flaviano— fue leída ante los obispos de Oriente, que exclamaron, según las actas: «¡Pedro ha hablado por boca de León!». Era el reconocimiento de que Roma podía dirimir las grandes cuestiones de fe. Y en el año 452, cuando Atila y sus hunos amenazaban con saquear Italia, fue León —y no un emperador— quien salió a su encuentro y, según la tradición, lo convenció de retirarse. Tres años después intercedió de nuevo ante los vándalos. En un mundo donde el poder imperial se desmoronaba, el papa empezaba a ocupar su lugar como protector de Roma. Esa es una clave de toda esta historia: el papado creció en buena parte porque se hundió lo que tenía al lado.',
+    },
+    {
+      heading: 'El vacío que dejó Roma',
+      body: 'En 476 cayó el último emperador romano de Occidente. El orden político que durante siglos había sostenido la vida de las ciudades se evaporó, y en su lugar quedaron reinos germánicos inestables y a menudo enfrentados. En medio de ese desconcierto, ¿quién quedaba en pie con autoridad moral, con organización, con archivos, con redes que cruzaban fronteras? La Iglesia. Los obispos heredaron de hecho funciones que antes eran del Estado: alimentar a los pobres en tiempos de hambre, negociar con los invasores, administrar justicia, mantener la cultura escrita. El papa, obispo de la mayor ciudad de Occidente, se convirtió en la figura más estable de un continente en ruinas. No buscó ese poder con un plan; lo recogió porque nadie más podía sostenerlo.',
+    },
+    {
+      heading: 'Gelasio y las dos espadas',
+      body: 'Hacia el año 494, el papa Gelasio I escribió al emperador de Oriente una carta que marcaría el pensamiento político de toda la Edad Media. En ella distinguía dos poderes que gobiernan el mundo: la autoridad sagrada de los obispos (la auctoritas) y el poder de los reyes (la potestas). Ambos venían de Dios, pero —argumentaba Gelasio— el poder espiritual era superior, porque los sacerdotes deberán responder ante Dios incluso por los reyes. Esta es la célebre «doctrina de las dos espadas». Durante siglos, papas y emperadores discutirían sobre cuál de las dos mandaba sobre la otra. Gelasio plantó la semilla de una idea explosiva: que el poder espiritual no solo era distinto del temporal, sino que estaba por encima de él.',
+    },
+    {
+      heading: 'Gregorio Magno: el papado se hace pastor y gobernante',
+      body: 'Si León dio al papado su teoría, Gregorio I, Gregorio Magno (590-604), le dio su forma práctica. Aristócrata romano convertido en monje, fue elegido papa en plena peste, con Italia devastada por la guerra y los lombardos a las puertas de Roma. Gregorio hizo de todo: organizó el abastecimiento de grano para alimentar a la ciudad, negoció treguas con los invasores cuando el emperador de Constantinopla no podía defenderla, reformó la liturgia y administró como un Estado las vastas propiedades de la Iglesia (el «patrimonio de Pedro»). Pero su gesto más decisivo para el futuro fue misionero: en 596 envió a Agustín de Canterbury con cuarenta monjes a evangelizar a los anglosajones de Inglaterra. Por primera vez, un papa lanzaba y dirigía la conversión de un pueblo entero. Roma dejaba de ser solo guardiana de la tradición para volverse motor de expansión.',
+    },
+    {
+      heading: 'Una alianza nueva: los francos',
+      body: 'Durante el siglo VIII, el papado se encontró atrapado entre dos peligros: los lombardos, que querían dominar Italia, y un emperador de Constantinopla cada vez más lejano, enredado además en la disputa sobre las imágenes sagradas (la querella iconoclasta). Roma necesitaba un nuevo protector, y lo halló al norte, entre los francos. En 754, el papa Esteban II cruzó los Alpes —algo inaudito— y ungió personalmente al rey Pipino el Breve. A cambio, Pipino bajó a Italia, derrotó a los lombardos y entregó al papa las tierras conquistadas. Es la llamada «Donación de Pipino» (756), y con ella nacen los Estados Pontificios: un territorio en el centro de Italia donde el papa no sería solo jefe espiritual, sino también soberano político, rey de hecho. Ese doble papel —pastor de almas y príncipe de tierras— acompañaría al papado durante más de mil años, hasta 1870.',
+    },
+    {
+      heading: 'La donación que nunca existió',
+      body: 'Por esos mismos años apareció uno de los documentos más influyentes —y más falsos— de la historia: la «Donación de Constantino». Era un escrito que afirmaba que el emperador Constantino, allá por el siglo IV, agradecido al papa Silvestre por haberlo curado de la lepra y bautizado, le había cedido el dominio sobre Roma, sobre toda Italia y sobre todo el Occidente, además de honores imperiales. Durante setecientos años se usó como prueba jurídica de que el poder temporal del papa venía nada menos que del primer emperador cristiano. Era una falsificación, redactada probablemente en el siglo VIII. Solo en el siglo XV el humanista Lorenzo Valla demostró, analizando su latín y sus anacronismos, que el texto no podía ser del tiempo de Constantino. Pero durante toda la Edad Media se lo creyó auténtico, y pesó enormemente en las pretensiones papales.',
+    },
+    {
+      heading: 'La noche de Navidad del año 800',
+      body: 'El día de Navidad del año 800, en la basílica de San Pedro, ocurrió una escena cargada de futuro. El papa León III colocó una corona sobre la cabeza de Carlomagno, rey de los francos, y lo proclamó emperador de los romanos. Por primera vez en más de tres siglos había de nuevo un emperador en Occidente, y lo había coronado un papa. El gesto era ambiguo y todos lo sabían: ¿significaba que el papa daba el Imperio, y por tanto estaba por encima del emperador? ¿O que el emperador, una vez coronado, protegía y mandaba sobre el papa? Esa pregunta sin respuesta clara sería el origen de las grandes luchas entre el sacerdocio y el Imperio durante los siglos siguientes. De aquella Navidad nació el Sacro Imperio y, con él, una rivalidad que definiría la política europea.',
+    },
+    {
+      heading: 'El siglo de hierro y de plomo',
+      body: 'No todo fue ascenso. El siglo X fue, para el papado, una época vergonzosa que los historiadores han llamado el saeculum obscurum, «el siglo oscuro», o incluso la «pornocracia». Familias aristocráticas romanas se disputaron el control de la sede de Pedro y colocaron en ella a parientes y favoritos, a veces jóvenes sin formación ni virtud. Hubo papas depuestos, asesinados, repuestos; uno fue juzgado cuando ya estaba muerto, su cadáver desenterrado y sentado en un trono para ser condenado (el macabro «sínodo del cadáver» de 897). El papado, en manos de la política romana, tocó fondo. Y sin embargo, precisamente esa decadencia provocó la reacción que lo elevaría a su máximo poder: del escándalo nació el deseo de reforma.',
+    },
+    {
+      heading: 'La reforma que cambió el papado',
+      body: 'El impulso reformador vino de los monasterios, sobre todo de Cluny, en Francia, fundado en 910 y deliberadamente sustraído al control de cualquier señor laico. Cluny predicaba un clero limpio: sin compra de cargos (la «simonía»), sin obispos nombrados por reyes y nobles, sin sacerdotes casados. En el siglo XI esos ideales llegaron al propio papado. Un paso decisivo fue el decreto de 1059, que quitó a la nobleza romana y al emperador la elección del papa y la puso en manos de un grupo de altos clérigos: los cardenales. Así nació el cónclave, el sistema que todavía hoy elige al papa. El papado empezaba a liberarse de quienes lo habían manipulado durante siglos.',
+    },
+    {
+      heading: 'Gregorio VII y el rey en la nieve',
+      body: 'El reformador más audaz subió al trono en 1073 con el nombre de Gregorio VII. Hombre de voluntad de hierro, redactó un documento asombroso, el Dictatus Papae, una lista de afirmaciones tajantes: que solo el papa puede nombrar y deponer obispos, que solo él puede usar las insignias imperiales, que puede deponer a los emperadores y liberar a los súbditos del juramento de fidelidad a un mal señor, que la Iglesia romana nunca ha errado ni errará. Era la doctrina papal llevada a su extremo. El choque con el emperador Enrique IV de Alemania fue inevitable, y estalló por una cuestión concreta: ¿quién nombraba a los obispos, el papa o el rey? Es la llamada «querella de las investiduras». Gregorio excomulgó a Enrique y liberó a sus vasallos de obedecerle. El emperador, abandonado por sus nobles, tuvo que ceder: en el invierno de 1077 cruzó los Alpes y se presentó ante el castillo de Canossa, donde el papa se hospedaba. Allí, según la tradición, esperó tres días descalzo sobre la nieve, vestido de penitente, hasta que Gregorio lo perdonó. «Ir a Canossa» quedó como expresión de la humillación de un poder ante otro. La imagen de un emperador arrodillado ante un papa recorrió Europa.',
+    },
+    {
+      heading: 'El acuerdo de Worms',
+      body: 'Canossa no terminó la guerra: la lucha entre papas y emperadores continuó con altibajos durante casi medio siglo más. Finalmente, en 1122, se firmó el Concordato de Worms, un compromiso. Se distinguió entre los dos aspectos del cargo de un obispo: su autoridad espiritual (los símbolos del báculo y el anillo), que daría el papa o la Iglesia, y sus bienes y poderes temporales, que reconocería el emperador. En la práctica, la Iglesia ganó lo esencial: el control sobre el nombramiento espiritual de sus propios pastores. El papado salía de la contienda fortalecido, dueño por fin de su clero y reconocido como una potencia con la que los reyes debían pactar de igual a igual.',
+    },
+    {
+      heading: 'Inocencio III: la cumbre',
+      body: 'Todo este largo desarrollo culminó con un solo hombre: Lotario de Segni, elegido papa en 1198 con apenas 37 años, que tomó el nombre de Inocencio III (1198-1216). Bajo su pontificado el poder papal alcanzó su punto más alto de toda la historia. Inocencio fue el primer papa que usó de forma habitual el título de «Vicario de Cristo» —representante de Cristo en la tierra—, más alto aún que el viejo «sucesor de Pedro». Sostuvo que el papa era «menor que Dios, pero mayor que el hombre», puesto entre el cielo y la tierra. Y no se quedó en las palabras: árbitro de la política europea, intervino en la elección del emperador de Alemania, obligó a reyes a someterse —puso a Inglaterra entera bajo «entredicho», suspendiendo los sacramentos, hasta doblegar al rey Juan sin Tierra—, recibió como vasallos a soberanos de media Europa y lanzó cruzadas. En él, la doctrina de León Magno y Gelasio, ocho siglos después, se hacía realidad política plena.',
+    },
+    {
+      heading: '1215: toda la cristiandad reunida',
+      body: 'El broche de esta era llegó en 1215, cuando Inocencio III convocó el IV Concilio de Letrán, la mayor asamblea de la Iglesia hasta entonces: más de cuatrocientos obispos, ochocientos abades y los enviados de los reyes de Occidente acudieron a Roma. Aquel concilio legisló para toda la cristiandad: definió oficialmente la doctrina de la transustanciación (la presencia real de Cristo en la eucaristía), ordenó a todo fiel confesarse y comulgar al menos una vez al año, reguló la vida del clero, aprobó nuevas órdenes religiosas y convocó una cruzada. Que un solo hombre pudiera reunir y dar leyes a la Iglesia entera, desde Inglaterra hasta Tierra Santa, muestra hasta dónde había llegado el papado. El obispo que en 325 era uno más entre los patriarcas se había convertido, en 1215, en cabeza indiscutida de la cristiandad occidental.',
+    },
+    {
+      heading: 'Lo que nos dejó esta era',
+      body: 'En el espacio de estos novecientos años, el papado pasó de ser una primacía de honor a una monarquía espiritual con poder político real. Lo logró por una mezcla de factores: una teología firme (la sucesión de Pedro), el vacío dejado por la caída del Imperio, alianzas oportunas con los francos, una reforma que lo limpió por dentro, y hombres de enorme voluntad como León, Gregorio Magno, Gregorio VII e Inocencio III. Conviene recordar que este ascenso tuvo luces y sombras: dio a Europa estabilidad, derecho, cultura y una autoridad moral que podía frenar a los reyes; pero también enredó a la Iglesia en intrigas políticas, guerras y ambiciones temporales que más tarde provocarían fuertes reacciones —desde los reformadores medievales hasta Lutero—. Entender la era del desarrollo papal es entender una de las claves de toda la historia de Occidente: cómo una autoridad nacida para predicar el Evangelio terminó, para bien y para mal, gobernando el mundo de su tiempo.',
+    },
+  ],
+  quote: {
+    text: '«El Señor entregó a Pedro el gobierno no solo de la Iglesia universal, sino de todo el mundo… Puso al sucesor de Pedro entre Dios y el hombre: menor que Dios, pero mayor que el hombre.»',
+    ref: 'Inocencio III, Sermón en la consagración del Pontífice',
+  },
+  sources: [
+    { label: 'González, Justo — Historia del cristianismo, vol. I', href: 'https://www.editorialclie.es/' },
+    { label: 'Britannica — Papacy', href: 'https://www.britannica.com/topic/papacy' },
+    { label: 'Britannica — Investiture Controversy', href: 'https://www.britannica.com/event/Investiture-Controversy' },
+    { label: 'Britannica — Innocent III', href: 'https://www.britannica.com/biography/Innocent-III-pope' },
+    { label: 'IV Concilio de Letrán (1215) — textos', href: 'https://www.newadvent.org/library/' },
+  ],
+};
+
+const E8: Essay = {
+  slug: 'montanismo',
+  title: 'El montanismo',
+  subtitle: 'La «Nueva Profecía» que quiso despertar a una Iglesia que se acomodaba',
+  period: 'c. 157 – 220 d.C.',
+  icon: '🕊️',
+  readingTime: '10 min',
+  excerpt: 'Hacia mediados del siglo II, un predicador de Frigia y dos profetisas anunciaron que el Espíritu Santo hablaba de nuevo, directamente, por sus bocas. Pedían una fe ardiente, una disciplina de hierro y el fin inminente del mundo. Conquistaron incluso a Tertuliano, el mayor escritor cristiano de su tiempo. La Iglesia los rechazó, pero las preguntas que plantearon nunca se han ido del todo.',
+  sections: [
+    {
+      heading: 'Un nombre, un hombre y un lugar',
+      body: 'El «montanismo» recibe su nombre de Montano, un cristiano de Frigia —una región del interior del Asia Menor, en la actual Turquía— que hacia el año 157 (algunos dicen 172) empezó a profetizar de un modo nuevo y arrebatado. Sus propios seguidores no se llamaban a sí mismos «montanistas», sino que hablaban de la «Nueva Profecía». Frigia era tierra de religiosidad intensa y extática, y allí prendió el movimiento como fuego en pasto seco. Conviene situarlo bien en el tiempo: es la época posterior a los apóstoles, cuando la Iglesia se va organizando en torno a los obispos, fija sus costumbres y empieza —según muchos de sus propios miembros— a perder el fervor de los primeros días. El montanismo nace, en buena medida, como una sacudida contra ese enfriamiento.',
+    },
+    {
+      heading: 'Las dos profetisas: Priscila y Maximila',
+      body: 'Montano no estaba solo. A su lado profetizaban dos mujeres, Priscila (también llamada Prisca) y Maximila, que habían abandonado a sus maridos para entregarse por completo al movimiento. Su protagonismo fue notable en una época en que la voz pública de la mujer en la Iglesia se iba restringiendo: aquí, en cambio, dos mujeres hablaban con autoridad profética, daban oráculos y eran tenidas por portavoces del Espíritu. Maximila llegó a anunciar que después de ella ya no habría más profecía, sino el fin. Ese papel femenino tan visible incomodó a muchos obispos y fue uno de los motivos —no el único— por los que la Iglesia mayoritaria miró el movimiento con desconfianza.',
+    },
+    {
+      heading: 'La doctrina del Espíritu, llevada al exceso',
+      body: 'El corazón del montanismo era una afirmación electrizante: el Espíritu Santo, el Paráclito que Jesús había prometido (Juan 14:16), seguía hablando de forma directa e inmediata, y lo hacía por boca de Montano y sus profetisas. Aquí está, según sus críticos, la primera exageración. Montano no se limitaba a decir que el Espíritu lo inspiraba: en sus oráculos llegaba a hablar en primera persona como si él mismo fuera el Espíritu, confundiéndose con Dios. «Yo soy el Padre, el Hijo y el Paráclito», se le atribuye haber dicho. Y pretendía una inspiración inmediata, recibida en estado de éxtasis o trance: el profeta perdía el control de sí, y el Espíritu hablaba a través de él como un músico hace sonar un instrumento. La Iglesia no negaba que el Espíritu pudiera hablar; lo que rechazaba era esa profecía descontrolada y, sobre todo, la pretensión de que añadía revelaciones nuevas con la misma autoridad que la Escritura.',
+    },
+    {
+      heading: 'El fin está cerca',
+      body: 'De esa convicción brotaba otra: el mundo se acababa ya. Montano enseñaba que Cristo vendría pronto y que la Jerusalén celestial estaba a punto de descender del cielo sobre una pequeña aldea de Frigia llamada Pepuza. Allí debían reunirse los creyentes para esperar el regreso del Señor. Este inminentismo —la certeza de que el fin era cuestión de meses o años— daba al movimiento una urgencia febril: si todo va a terminar mañana, no hay tiempo para tibiezas ni para acomodarse al mundo. La esperanza en la segunda venida es, por supuesto, plenamente cristiana; lo que distinguía a los montanistas era fijarle fecha y lugar, algo que el propio Jesús había desaconsejado: «pero del día y la hora nadie sabe» (Mateo 24:36).',
+    },
+    {
+      heading: 'Una disciplina de hierro',
+      body: 'Como el fin estaba cerca y el Espíritu exigía pureza, el montanismo predicaba una disciplina mucho más dura que la de la Iglesia común. Distinguía entre pecados graves («mortales») y leves («veniales»), y enseñaba que ciertos pecados graves cometidos después del bautismo ya no tenían perdón en esta vida. Pedía a los clérigos y a los creyentes serios normas más estrictas: ayunos prolongados y frecuentes, prohibición de segundas nupcias, rechazo de los placeres y los espectáculos. Sobre la persecución era tajante: negar a Cristo para salvar la vida acarreaba una condenación total, sin posibilidad de readmisión; por eso no solo prohibía huir del martirio, sino que casi lo buscaba. Y entendía que los sufrimientos físicos —el ayuno, el dolor, el martirio— fortalecían el espíritu y purificaban al creyente. Era una espiritualidad heroica y exigente, hecha para atletas de la fe, que despreciaba toda forma de cristianismo cómodo.',
+    },
+    {
+      heading: 'La gran conquista: Tertuliano',
+      body: 'El montanismo logró un converso de enorme talla: Tertuliano de Cartago, el escritor cristiano más brillante del Norte de África y el primero en escribir teología en latín. Hacia el año 207, ya maduro y famoso, Tertuliano se adhirió a la «Nueva Profecía». No aceptó todas sus doctrinas ni cayó en sus excesos más extraños, pero le atrajo poderosamente su rigor moral: estaba harto de lo que veía como la mundanalidad y la blandura crecientes de la Iglesia, de obispos que perdonaban con demasiada facilidad y de cristianos que se parecían cada vez más al mundo que los rodeaba. En el montanismo encontró una fe seria, disciplinada, dispuesta al martirio. Su caso ilustra algo importante: el movimiento no atraía a gente frívola, sino a creyentes fervientes a quienes la tibieza de la Iglesia oficial les resultaba insoportable. Que un hombre de su categoría se pasara a sus filas fue una pérdida dolorosa para la Gran Iglesia.',
+    },
+    {
+      heading: 'La respuesta de la Iglesia',
+      body: 'Los obispos de Asia Menor reaccionaron con dureza. Convocaron sínodos —de los primeros que conocemos— y terminaron condenando y excomulgando a los montanistas. ¿Por qué, si pedían santidad y fervor, cosas tan buenas? Por varias razones. Primero, porque su pretensión de recibir revelaciones nuevas y vinculantes amenazaba con dejar la puerta abierta a cualquier «profeta» que dijera hablar por el Espíritu; frente a eso, la Iglesia fue cerrando la idea de que la revelación normativa había quedado fija con los apóstoles. Segundo, porque su rigorismo —negar para siempre el perdón a los que caían— chocaba con el Evangelio de la misericordia y con la práctica pastoral de restaurar al arrepentido. Tercero, porque su profecía extática y desordenada, y la autoridad de sus profetisas, desafiaban el gobierno de los obispos. El montanismo sobrevivió en algunas regiones durante siglos, pero quedó marginado como secta.',
+    },
+    {
+      heading: 'Cómo juzgarlo con justicia',
+      body: 'Visto con la calma del historiador, el montanismo no fue una herejía de las grandes —no negaba la Trinidad ni la divinidad de Cristo como el arrianismo, ni despreciaba la creación como el gnosticismo—. Fue más bien un movimiento de protesta: el primer gran intento de frenar la institucionalización y el enfriamiento de la Iglesia volviendo al fervor del Espíritu y a la espera del fin. En eso acertó en el diagnóstico: la Iglesia sí se estaba acomodando. Pero erró en los remedios: confundir la voz del profeta con la voz de Dios, añadir revelaciones a las ya dadas, ponerle fecha al regreso de Cristo y cerrar la puerta del perdón a los pecadores. Desde una lectura evangélica y bautista, su historia es doblemente aleccionadora: nos recuerda el valor irrenunciable de un cristianismo vivo, disciplinado y guiado por el Espíritu, y a la vez el peligro de todo entusiasmo que se desliga de la Escritura ya entregada y de la gracia que perdona. Tensiones que reaparecerían, una y otra vez, en cada despertar y cada movimiento de renovación de los siglos siguientes.',
+    },
+  ],
+  quote: {
+    text: '«He aquí, el hombre es como una lira, y yo vuelo sobre él como el plectro; el hombre duerme, y yo velo.»',
+    ref: 'Oráculo atribuido a Montano (citado por Epifanio, Panarion 48)',
+  },
+  sources: [
+    { label: 'González, Justo — Historia del cristianismo, vol. I', href: 'https://www.editorialclie.es/' },
+    { label: 'Eusebio — Historia Eclesiástica, libro V (sobre los montanistas)', href: 'https://www.newadvent.org/fathers/250105.htm' },
+    { label: 'Britannica — Montanism', href: 'https://www.britannica.com/topic/Montanism' },
+    { label: 'Tertuliano — obras de su período montanista', href: 'https://www.newadvent.org/fathers/0310.htm' },
+  ],
+};
+
+const E9: Essay = {
+  slug: 'novacianos',
+  title: 'Los novacianos',
+  subtitle: 'La iglesia de los «puros» que no supo perdonar a los que cayeron',
+  period: 'c. 250 – 258 d.C.',
+  icon: '🚪',
+  readingTime: '9 min',
+  excerpt: 'Tras una persecución brutal, miles de cristianos que habían negado la fe pedían volver a la Iglesia. ¿Había que recibirlos? La pregunta partió a la cristiandad en dos: un partido abría la puerta con condiciones; otro la cerraba para siempre. De ese choque nació Novaciano, un obispo rival que fundó una iglesia de santos sin mancha. Era un ideal hermoso y, a la vez, un callejón sin salida.',
+  sections: [
+    {
+      heading: 'El problema de fondo: los caídos',
+      body: 'En el año 250, el emperador Decio ordenó por primera vez que todos los habitantes del Imperio ofrecieran un sacrificio a los dioses y obtuvieran un certificado (libellus) que lo probara. Fue una persecución general y bien organizada, pensada justamente para desenmascarar a los cristianos. Y funcionó en parte: muchos creyentes, ante la amenaza de tortura o muerte, cedieron. Unos sacrificaron de verdad; otros sobornaron a los funcionarios para conseguir un certificado falso sin sacrificar. A todos ellos se les llamó lapsi, «los caídos». Cuando la persecución amainó, surgió un problema pastoral enorme y angustioso: esos hermanos que habían negado a Cristo ahora se arrepentían y pedían volver. ¿Qué hacer con ellos?',
+    },
+    {
+      heading: 'Dos partidos: el rigor y la misericordia',
+      body: 'La Iglesia se dividió en dos posturas. Un partido, más compasivo, sostenía que los caídos podían regresar a la comunión con ciertas condiciones: una penitencia pública, un tiempo de prueba, la intercesión de los confesores que habían resistido. Era la vía de la misericordia disciplinada. El otro partido, más severo, afirmaba que un pecado tan grave como negar a Cristo no podía perdonarse nunca en esta vida: a esos cristianos jamás debía permitírseles el regreso a la Iglesia; quedaban entregados solo a la misericordia de Dios en el juicio final. Detrás de la discusión había una pregunta enorme: ¿hasta dónde llega el perdón de la Iglesia?, ¿puede una comunidad santa readmitir a quien la traicionó?',
+    },
+    {
+      heading: 'La elección de Cornelio (251)',
+      body: 'En el año 251, la sede de Roma —vacante porque su obispo Fabián había muerto mártir en la persecución— eligió como nuevo obispo a Cornelio, hombre del partido moderado, partidario de readmitir a los caídos tras penitencia. Lo respaldó el influyente Cipriano de Cartago, que en el norte de África defendía esa misma vía media: ni laxitud que perdonara sin más, ni dureza que cerrara la puerta para siempre. La elección de Cornelio significaba que la corriente de la misericordia disciplinada se imponía en la Iglesia mayoritaria. Pero no todos lo aceptaron.',
+    },
+    {
+      heading: 'La ruptura de Novaciano',
+      body: 'El líder del partido conservador era Novaciano, un presbítero romano culto y respetado, uno de los primeros teólogos que escribió en latín (su tratado sobre la Trinidad se sigue estudiando). Novaciano no aceptó a Cornelio ni su política de perdón, y se separó de los moderados. Sus seguidores lo eligieron obispo de Roma en oposición a Cornelio: fue, por tanto, uno de los primeros «antipapas» de la historia, un obispo rival frente al obispo reconocido. Su acusación era grave y de fondo: decía que los moderados, al readmitir a los apóstatas, se habían contaminado y ya no eran la verdadera Iglesia. La Iglesia auténtica —sostenía— era solo la de los que se mantenían puros.',
+    },
+    {
+      heading: 'Una iglesia de «puros»',
+      body: 'Los seguidores de Novaciano se llamaron a sí mismos katharoí, «los puros» (de ahí viene, siglos después, el nombre de otros grupos «cátaros»). Su ideal era una Iglesia sin mancha, formada solo por santos que no hubieran cometido pecados graves después del bautismo. Por eso negaban para siempre la readmisión no solo a los apóstatas, sino a otros pecadores graves. Y como consideraban que la Iglesia de Cornelio era falsa, llegaban a rebautizar a quienes venían de ella, porque a sus ojos el bautismo recibido «fuera» de la verdadera Iglesia no valía. Era una comunidad exigente, austera y orgullosa de su pureza, prima hermana del rigorismo que ya habían predicado los montanistas medio siglo antes.',
+    },
+    {
+      heading: 'Una secta que duró siglos',
+      body: 'A diferencia de muchos movimientos efímeros, el novacianismo se extendió y perduró. Sus iglesias se esparcieron sobre todo por el Asia Menor y el Norte de África —regiones de cristianismo intenso y con tradición rigorista—, pero también llegaron a Roma, Galia y Oriente. Mantuvieron su propia jerarquía de obispos durante varios siglos; todavía en el siglo V y VI se hablaba de comunidades novacianas. Fue, en cierto modo, la primera gran iglesia cismática duradera de Occidente: no una herejía sobre la naturaleza de Dios, sino un cisma sobre la santidad y la disciplina de la Iglesia.',
+    },
+    {
+      heading: 'La respuesta de la Gran Iglesia',
+      body: 'Cipriano de Cartago fue quien dio la respuesta teológica más influyente. Frente a Novaciano defendió dos cosas a la vez. Primera: la Iglesia es una sola, y separarse de ella —por muy puras que sean las intenciones— es un cisma que rompe el cuerpo de Cristo; de ahí su célebre frase «no puede tener a Dios por Padre quien no tiene a la Iglesia por madre». Segunda: la Iglesia en la tierra es un campo donde crecen juntos el trigo y la cizaña (Mateo 13:24-30), no un club de perfectos; tiene autoridad para perdonar y restaurar al arrepentido, porque para eso recibió las llaves. Readmitir al caído que se arrepiente no es debilidad: es el Evangelio. Los sínodos respaldaron a Cornelio y condenaron a Novaciano.',
+    },
+    {
+      heading: 'Cómo juzgarlo con justicia',
+      body: 'Visto con calma, Novaciano no era un cínico ni un ambicioso: era un hombre serio que amaba la santidad de la Iglesia y no soportaba ver entrar de nuevo a quienes habían negado a Cristo mientras otros morían por Él. Su preocupación era legítima y profundamente cristiana. Pero confundió la santidad con el perfeccionismo, y por defender la pureza terminó negando dos cosas esenciales: el poder de la Iglesia para perdonar y la unidad del pueblo de Dios. Para un lector bautista hay aquí mucho que pensar. Por un lado, el novacianismo toca temas que nos son caros: la idea de una iglesia de creyentes genuinos, la seriedad del pecado, incluso el debate sobre la validez del bautismo. Por otro, es una advertencia: cuando el celo por la pureza se convierte en incapacidad para perdonar y en ruptura de la comunión, deja de ser fidelidad y se vuelve cisma. La misma tensión —pureza frente a misericordia, iglesia de santos frente a iglesia de pecadores perdonados— reaparecería poco después en el donatismo y, de un modo u otro, en cada reforma de la historia.',
+    },
+  ],
+  quote: {
+    text: '«No puede tener a Dios por Padre quien no tiene a la Iglesia por madre.»',
+    ref: 'Cipriano de Cartago, Sobre la unidad de la Iglesia 6',
+  },
+  sources: [
+    { label: 'González, Justo — Historia del cristianismo, vol. I', href: 'https://www.editorialclie.es/' },
+    { label: 'Eusebio — Historia Eclesiástica, libro VI', href: 'https://www.newadvent.org/fathers/250106.htm' },
+    { label: 'Cipriano — Sobre la unidad de la Iglesia católica', href: 'https://www.newadvent.org/fathers/050701.htm' },
+    { label: 'Britannica — Novatian', href: 'https://www.britannica.com/biography/Novatian' },
+  ],
+};
+
+export const ESSAYS: Essay[] = [E1, E2, E3, E4, E5, E6, E7, E8, E9];
