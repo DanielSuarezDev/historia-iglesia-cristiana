@@ -24,7 +24,7 @@ interface PersecutionEvent {
   sources: { label: string; href: string }[];
 }
 
-const EVENTS: PersecutionEvent[] = [
+export const EVENTS: PersecutionEvent[] = [
   {
     year: 64,
     yearLabel: '64 d.C.',
@@ -260,6 +260,39 @@ const EVENTS: PersecutionEvent[] = [
     ],
   },
   {
+    year: 235,
+    yearLabel: '235–238 d.C.',
+    title: 'Maximino el Tracio: contra los dirigentes',
+    emperor: 'Maximino el Tracio (235–238)',
+    short: 'El primer emperador que ataca al liderazgo cristiano',
+    icon: '⚔️',
+    intensity: 'media',
+    intro:
+      'Después de Perpetua, la Iglesia disfruta de casi treinta años de relativa calma. Alejandro Severo, el último de su dinastía, era tan tolerante que —según la leyenda— tenía en su capilla privada una imagen de Cristo junto a las de los dioses. Cuando un soldado tracio, Maximino, lo asesina y toma el poder en el 235, reacciona contra todo lo que olía a la corte anterior. Y entre eso estaban los cristianos.',
+    paragraphs: [
+      {
+        heading: 'Una persecución selectiva',
+        body:
+          'Maximino no persigue a todos los cristianos: va directo contra los líderes, contra "los dirigentes de las iglesias", como dice Eusebio. Es la primera vez que un emperador entiende que para herir al movimiento basta con golpear a sus cabezas. Es la semilla de lo que harán Decio y Valeriano a lo grande.',
+      },
+      {
+        heading: 'Ponciano e Hipólito en las minas',
+        body:
+          'En Roma, dos figuras enfrentadas entre sí terminan compartiendo el mismo castigo: el obispo Ponciano y el presbítero Hipólito —que llegó a ser una especie de obispo rival— son desterrados juntos a las minas de Cerdeña, una condena de la que casi nadie volvía. Allí mueren. Antes de morir, según la tradición, se reconcilian: el cisma se cierra en el destierro.',
+      },
+      {
+        heading: 'Orígenes y la exhortación al martirio',
+        body:
+          'En medio de esta oleada, el gran teólogo Orígenes escribe su Exhortación al martirio, animando a dos amigos presos a no negar la fe. Él mismo no muere ahora —su hora llegará con Decio—, pero pone por escrito la espiritualidad del mártir que sostendrá a la Iglesia en las persecuciones peores que venían.',
+      },
+    ],
+    legacy:
+      'Maximino reina apenas tres años y muere asesinado por sus propias tropas. Su persecución fue corta y desigual, pero rompió la larga paz e inauguró una idea peligrosa: que la forma más eficaz de atacar a la Iglesia era descabezarla. Decio y Valeriano tomarían nota.',
+    sources: [
+      { label: 'Eusebio — Historia Eclesiástica VI', href: 'https://www.newadvent.org/fathers/250106.htm' },
+    ],
+  },
+  {
     year: 250,
     yearLabel: '250 d.C.',
     title: 'Decio: la primera persecución universal',
@@ -331,6 +364,35 @@ const EVENTS: PersecutionEvent[] = [
       'Cuarenta años de paz siguen al edicto de Galieno. La Iglesia crece enormemente, construye templos visibles, se vuelve influyente. Justo lo que necesitaba la siguiente y peor persecución para tener víctimas a la mano.',
     sources: [
       { label: 'Acta proconsularia de Cipriano', href: 'https://www.newadvent.org/fathers/0506.htm' },
+    ],
+  },
+  {
+    year: 270,
+    yearLabel: '270–275 d.C.',
+    title: 'Aureliano: la persecución que no llegó a tiempo',
+    emperor: 'Aureliano (270–275)',
+    short: 'Firma el edicto, pero lo asesinan antes de aplicarlo',
+    icon: '☀️',
+    intensity: 'baja',
+    intro:
+      'Tras el edicto de tolerancia de Galieno, la Iglesia vive unos cuarenta años de paz y crece como nunca. El emperador Aureliano reunifica un Imperio que se caía a pedazos —se gana el título de Restitutor Orbis, "el que restauró el mundo"— y promueve con fuerza un nuevo culto oficial: el del Sol Invicto. En esa lógica de unidad religiosa, hacia el final de su reinado decide volver contra los cristianos. Pero la historia le juega una mala pasada.',
+    paragraphs: [
+      {
+        heading: 'Un emperador que arbitra un pleito cristiano',
+        body:
+          'Lo curioso es que, antes de perseguir, Aureliano se metió a resolver un conflicto dentro de la Iglesia. En Antioquía, el obispo Pablo de Samosata se negaba a dejar el cargo pese a haber sido depuesto por hereje. Le pidieron al emperador pagano que decidiera, y Aureliano falló que el edificio se entregara a quien estuviera en comunión "con los obispos de Italia y de Roma". Un dato asombroso: el poder imperial reconociendo a Roma como criterio de unidad.',
+      },
+      {
+        heading: 'El edicto que nunca se ejecutó',
+        body:
+          'Hacia el 275, Aureliano prepara —y según algunas fuentes llega a firmar— edictos de persecución contra los cristianos. Pero antes de que se difundieran y se aplicaran, es asesinado en una conspiración de sus propios oficiales. Eusebio lo dice casi con alivio: la mano que iba a firmar la sangre quedó detenida. Fue una persecución más anunciada que cumplida.',
+      },
+    ],
+    legacy:
+      'La amenaza de Aureliano se disuelve con su muerte, y la Iglesia recupera otros casi treinta años de paz que llegan hasta el 303. Esa larguísima tranquilidad es, paradójicamente, lo que volverá tan brutal el contraste: cuando estalle la Gran Persecución de Diocleciano, encontrará una Iglesia visible, rica en templos y confiada, justo la presa que necesitaba.',
+    sources: [
+      { label: 'Eusebio — Historia Eclesiástica VII', href: 'https://www.newadvent.org/fathers/250107.htm' },
+      { label: 'Lactancio — Sobre la muerte de los perseguidores 6', href: 'https://www.newadvent.org/fathers/0705.htm' },
     ],
   },
   {

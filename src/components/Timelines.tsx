@@ -5,17 +5,21 @@ import { useTheme } from '@/context/ThemeContext';
 import { useIsMobile } from '@/lib/useMediaQuery';
 import TimelineCentury from './TimelineCentury';
 import TimelinePersecuciones from './TimelinePersecuciones';
+import TimelineReformas from './TimelineReformas';
+import MapaHistorico from './MapaHistorico';
 import { CENTURIES_DATA } from '@/data/centuries';
 import { CONCILIOS } from '@/data/concilios';
 import { ERRORES } from '@/data/errores';
 
-type TabKey = 'siglos' | 'persecuciones' | 'concilios' | 'errores';
+type TabKey = 'siglos' | 'persecuciones' | 'concilios' | 'errores' | 'reformas' | 'mapa';
 
 const TABS: { key: TabKey; label: string; soon?: boolean }[] = [
   { key: 'siglos', label: 'Siglos' },
   { key: 'persecuciones', label: 'Persecuciones' },
   { key: 'concilios', label: 'Concilios' },
   { key: 'errores', label: 'Desviaciones doctrinales' },
+  { key: 'reformas', label: 'Disidentes y reformas' },
+  { key: 'mapa', label: 'Mapa' },
 ];
 
 const ENABLED_CENTURIES = new Set<number>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]);
@@ -177,6 +181,18 @@ export default function Timelines() {
         {tab === 'errores' && (
           <div style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.2s' }}>
             <TimelineCentury century={ERRORES} labelPrefix="Desviación" forceVertical />
+          </div>
+        )}
+
+        {tab === 'reformas' && (
+          <div style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.2s' }}>
+            <TimelineReformas />
+          </div>
+        )}
+
+        {tab === 'mapa' && (
+          <div style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.2s' }}>
+            <MapaHistorico />
           </div>
         )}
       </div>
